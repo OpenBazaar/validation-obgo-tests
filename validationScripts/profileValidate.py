@@ -1,10 +1,10 @@
 import jsonschema
 import json
 
-with open('./profileSchema.json') as pS:
+with open('../schema/profileSchema.json') as pS:
   profileSchema = json.load(pS)
 
-with open('./profile.json') as p:
+with open('../responses/profile.json') as p:
   profile = json.load(p)
 
 try:
