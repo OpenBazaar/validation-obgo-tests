@@ -1,0 +1,1032 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "listing",
+    "hash",
+    "signature"
+  ],
+  "properties": {
+    "listing": {
+      "$id": "#/properties/listing",
+      "type": "object",
+      "title": "The Listing Schema",
+      "required": [
+        "slug",
+        "vendorID",
+        "metadata",
+        "item",
+        "shippingOptions",
+        "taxes",
+        "coupons",
+        "moderators",
+        "termsAndConditions",
+        "refundPolicy"
+      ],
+      "properties": {
+        "slug": {
+          "$id": "#/properties/listing/properties/slug",
+          "type": "string",
+          "title": "The Slug Schema",
+          "default": "",
+          "examples": [
+            "eth-physical-order-testing-w-options"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "vendorID": {
+          "$id": "#/properties/listing/properties/vendorID",
+          "type": "object",
+          "title": "The Vendorid Schema",
+          "required": [
+            "peerID",
+            "handle",
+            "pubkeys",
+            "bitcoinSig"
+          ],
+          "properties": {
+            "peerID": {
+              "$id": "#/properties/listing/properties/vendorID/properties/peerID",
+              "type": "string",
+              "title": "The Peerid Schema",
+              "default": "",
+              "examples": [
+                "QmVCJiuBY5RPw8wWU85AxzJRkpYZsvDpnYRyGe8opLRJX6"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "handle": {
+              "$id": "#/properties/listing/properties/vendorID/properties/handle",
+              "type": "string",
+              "title": "The Handle Schema",
+              "default": "",
+              "examples": [
+                ""
+              ],
+              "pattern": "^(.*)$"
+            },
+            "pubkeys": {
+              "$id": "#/properties/listing/properties/vendorID/properties/pubkeys",
+              "type": "object",
+              "title": "The Pubkeys Schema",
+              "required": [
+                "identity",
+                "bitcoin"
+              ],
+              "properties": {
+                "identity": {
+                  "$id": "#/properties/listing/properties/vendorID/properties/pubkeys/properties/identity",
+                  "type": "string",
+                  "title": "The Identity Schema",
+                  "default": "",
+                  "examples": [
+                    "CAESIDXMf3G/bZGWV6yOrKmBn5Nnz/IxZ8ITdv0TGQFVEQAL"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "bitcoin": {
+                  "$id": "#/properties/listing/properties/vendorID/properties/pubkeys/properties/bitcoin",
+                  "type": "string",
+                  "title": "The Bitcoin Schema",
+                  "default": "",
+                  "examples": [
+                    "AmV/l7ifbedh/JPJ5hxp2S0ttfpWW8CHR2kyVJ0rEDrd"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "bitcoinSig": {
+              "$id": "#/properties/listing/properties/vendorID/properties/bitcoinSig",
+              "type": "string",
+              "title": "The Bitcoinsig Schema",
+              "default": "",
+              "examples": [
+                "MEUCIQD0osxqRmurUeSbQ9fw/aswEKd+AXjL+0HgHDctuPM1KAIgSzXjw3zYXun8AREmqbb0mZarEi6mPMDkIJ492L5Te0w="
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "metadata": {
+          "$id": "#/properties/listing/properties/metadata",
+          "type": "object",
+          "title": "The Metadata Schema",
+          "required": [
+            "version",
+            "contractType",
+            "format",
+            "expiry",
+            "acceptedCurrencies",
+            "pricingCurrency",
+            "language",
+            "escrowTimeoutHours",
+            "coinType",
+            "coinDivisibility",
+            "priceModifier"
+          ],
+          "properties": {
+            "version": {
+              "$id": "#/properties/listing/properties/metadata/properties/version",
+              "type": "integer",
+              "title": "The Version Schema",
+              "default": 0,
+              "examples": [
+                5
+              ]
+            },
+            "contractType": {
+              "$id": "#/properties/listing/properties/metadata/properties/contractType",
+              "type": "string",
+              "title": "The Contracttype Schema",
+              "default": "",
+              "examples": [
+                "PHYSICAL_GOOD"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "format": {
+              "$id": "#/properties/listing/properties/metadata/properties/format",
+              "type": "string",
+              "title": "The Format Schema",
+              "default": "",
+              "examples": [
+                "FIXED_PRICE"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "expiry": {
+              "$id": "#/properties/listing/properties/metadata/properties/expiry",
+              "type": "string",
+              "title": "The Expiry Schema",
+              "default": "",
+              "examples": [
+                "2037-12-31T05:00:00.000Z"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "acceptedCurrencies": {
+              "$id": "#/properties/listing/properties/metadata/properties/acceptedCurrencies",
+              "type": "array",
+              "title": "The Acceptedcurrencies Schema",
+              "items": {
+                "$id": "#/properties/listing/properties/metadata/properties/acceptedCurrencies/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "BTC",
+                  "BCH",
+                  "LTC",
+                  "ZEC",
+                  "ETH"
+                ],
+                "pattern": "^(.*)$"
+              }
+            },
+            "pricingCurrency": {
+              "$id": "#/properties/listing/properties/metadata/properties/pricingCurrency",
+              "type": "string",
+              "title": "The Pricingcurrency Schema",
+              "default": "",
+              "examples": [
+                ""
+              ],
+              "pattern": "^(.*)$"
+            },
+            "language": {
+              "$id": "#/properties/listing/properties/metadata/properties/language",
+              "type": "string",
+              "title": "The Language Schema",
+              "default": "",
+              "examples": [
+                ""
+              ],
+              "pattern": "^(.*)$"
+            },
+            "escrowTimeoutHours": {
+              "$id": "#/properties/listing/properties/metadata/properties/escrowTimeoutHours",
+              "type": "integer",
+              "title": "The Escrowtimeouthours Schema",
+              "default": 0,
+              "examples": [
+                1080
+              ]
+            },
+            "coinType": {
+              "$id": "#/properties/listing/properties/metadata/properties/coinType",
+              "type": "string",
+              "title": "The Cointype Schema",
+              "default": "",
+              "examples": [
+                ""
+              ],
+              "pattern": "^(.*)$"
+            },
+            "coinDivisibility": {
+              "$id": "#/properties/listing/properties/metadata/properties/coinDivisibility",
+              "type": "integer",
+              "title": "The Coindivisibility Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "priceModifier": {
+              "$id": "#/properties/listing/properties/metadata/properties/priceModifier",
+              "type": "integer",
+              "title": "The Pricemodifier Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            }
+          }
+        },
+        "item": {
+          "$id": "#/properties/listing/properties/item",
+          "type": "object",
+          "title": "The Item Schema",
+          "required": [
+            "title",
+            "description",
+            "processingTime",
+            "price",
+            "nsfw",
+            "tags",
+            "images",
+            "categories",
+            "condition",
+            "options",
+            "skus",
+            "priceModifier",
+            "bigPrice",
+            "priceCurrency"
+          ],
+          "properties": {
+            "title": {
+              "$id": "#/properties/listing/properties/item/properties/title",
+              "type": "string",
+              "title": "The Title Schema",
+              "default": "",
+              "examples": [
+                "ETH physical order testing w/ options"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "description": {
+              "$id": "#/properties/listing/properties/item/properties/description",
+              "type": "string",
+              "title": "The Description Schema",
+              "default": "",
+              "examples": [
+                "This is a listing example for testing orders."
+              ],
+              "pattern": "^(.*)$"
+            },
+            "processingTime": {
+              "$id": "#/properties/listing/properties/item/properties/processingTime",
+              "type": "string",
+              "title": "The Processingtime Schema",
+              "default": "",
+              "examples": [
+                "3 days"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "price": {
+              "$id": "#/properties/listing/properties/item/properties/price",
+              "type": "integer",
+              "title": "The Price Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "nsfw": {
+              "$id": "#/properties/listing/properties/item/properties/nsfw",
+              "type": "boolean",
+              "title": "The Nsfw Schema",
+              "default": false,
+              "examples": [
+                false
+              ]
+            },
+            "tags": {
+              "$id": "#/properties/listing/properties/item/properties/tags",
+              "type": "array",
+              "title": "The Tags Schema",
+              "items": {
+                "$id": "#/properties/listing/properties/item/properties/tags/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "vintage dress"
+                ],
+                "pattern": "^(.*)$"
+              }
+            },
+            "images": {
+              "$id": "#/properties/listing/properties/item/properties/images",
+              "type": "array",
+              "title": "The Images Schema",
+              "items": {
+                "$id": "#/properties/listing/properties/item/properties/images/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "filename",
+                  "original",
+                  "large",
+                  "medium",
+                  "small",
+                  "tiny"
+                ],
+                "properties": {
+                  "filename": {
+                    "$id": "#/properties/listing/properties/item/properties/images/items/properties/filename",
+                    "type": "string",
+                    "title": "The Filename Schema",
+                    "default": "",
+                    "examples": [
+                      "front"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "original": {
+                    "$id": "#/properties/listing/properties/item/properties/images/items/properties/original",
+                    "type": "string",
+                    "title": "The Original Schema",
+                    "default": "",
+                    "examples": [
+                      "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "large": {
+                    "$id": "#/properties/listing/properties/item/properties/images/items/properties/large",
+                    "type": "string",
+                    "title": "The Large Schema",
+                    "default": "",
+                    "examples": [
+                      "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "medium": {
+                    "$id": "#/properties/listing/properties/item/properties/images/items/properties/medium",
+                    "type": "string",
+                    "title": "The Medium Schema",
+                    "default": "",
+                    "examples": [
+                      "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "small": {
+                    "$id": "#/properties/listing/properties/item/properties/images/items/properties/small",
+                    "type": "string",
+                    "title": "The Small Schema",
+                    "default": "",
+                    "examples": [
+                      "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "tiny": {
+                    "$id": "#/properties/listing/properties/item/properties/images/items/properties/tiny",
+                    "type": "string",
+                    "title": "The Tiny Schema",
+                    "default": "",
+                    "examples": [
+                      "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            },
+            "categories": {
+              "$id": "#/properties/listing/properties/item/properties/categories",
+              "type": "array",
+              "title": "The Categories Schema",
+              "items": {
+                "$id": "#/properties/listing/properties/item/properties/categories/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "👚 Apparel &amp; Accessories"
+                ],
+                "pattern": "^(.*)$"
+              }
+            },
+            "grams": {
+              "$id": "#/properties/listing/properties/item/properties/grams",
+              "type": "integer",
+              "title": "The Grams Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "condition": {
+              "$id": "#/properties/listing/properties/item/properties/condition",
+              "type": "string",
+              "title": "The Condition Schema",
+              "default": "",
+              "examples": [
+                "New"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "options": {
+              "$id": "#/properties/listing/properties/item/properties/options",
+              "type": "array",
+              "title": "The Options Schema",
+              "items": {
+                "$id": "#/properties/listing/properties/item/properties/options/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "name",
+                  "description",
+                  "variants"
+                ],
+                "properties": {
+                  "name": {
+                    "$id": "#/properties/listing/properties/item/properties/options/items/properties/name",
+                    "type": "string",
+                    "title": "The Name Schema",
+                    "default": "",
+                    "examples": [
+                      "Color"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "description": {
+                    "$id": "#/properties/listing/properties/item/properties/options/items/properties/description",
+                    "type": "string",
+                    "title": "The Description Schema",
+                    "default": "",
+                    "examples": [
+                      "Color of the dress."
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "variants": {
+                    "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants",
+                    "type": "array",
+                    "title": "The Variants Schema",
+                    "items": {
+                      "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "name"
+                      ],
+                      "properties": {
+                        "name": {
+                          "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/name",
+                          "type": "string",
+                          "title": "The Name Schema",
+                          "default": "",
+                          "examples": [
+                            "Red"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "image": {
+                          "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/image",
+                          "type": "object",
+                          "title": "The Image Schema",
+                          "required": [
+                            "filename",
+                            "original",
+                            "large",
+                            "medium",
+                            "small",
+                            "tiny"
+                          ],
+                          "properties": {
+                            "filename": {
+                              "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/image/properties/filename",
+                              "type": "string",
+                              "title": "The Filename Schema",
+                              "default": "",
+                              "examples": [
+                                "front"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "original": {
+                              "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/image/properties/original",
+                              "type": "string",
+                              "title": "The Original Schema",
+                              "default": "",
+                              "examples": [
+                                "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "large": {
+                              "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/image/properties/large",
+                              "type": "string",
+                              "title": "The Large Schema",
+                              "default": "",
+                              "examples": [
+                                "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "medium": {
+                              "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/image/properties/medium",
+                              "type": "string",
+                              "title": "The Medium Schema",
+                              "default": "",
+                              "examples": [
+                                "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "small": {
+                              "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/image/properties/small",
+                              "type": "string",
+                              "title": "The Small Schema",
+                              "default": "",
+                              "examples": [
+                                "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "tiny": {
+                              "$id": "#/properties/listing/properties/item/properties/options/items/properties/variants/items/properties/image/properties/tiny",
+                              "type": "string",
+                              "title": "The Tiny Schema",
+                              "default": "",
+                              "examples": [
+                                "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "skus": {
+              "$id": "#/properties/listing/properties/item/properties/skus",
+              "type": "array",
+              "title": "The Skus Schema",
+              "items": {
+                "$id": "#/properties/listing/properties/item/properties/skus/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "variantCombo",
+                  "productID",
+                  "surcharge",
+                  "quantity",
+                  "bigSurcharge",
+                  "bigQuantity"
+                ],
+                "properties": {
+                  "variantCombo": {
+                    "$id": "#/properties/listing/properties/item/properties/skus/items/properties/variantCombo",
+                    "type": "array",
+                    "title": "The Variantcombo Schema",
+                    "items": {
+                      "$id": "#/properties/listing/properties/item/properties/skus/items/properties/variantCombo/items",
+                      "type": "integer",
+                      "title": "The Items Schema",
+                      "default": 0,
+                      "examples": [
+                        0,
+                        0
+                      ]
+                    }
+                  },
+                  "productID": {
+                    "$id": "#/properties/listing/properties/item/properties/skus/items/properties/productID",
+                    "type": "string",
+                    "title": "The Productid Schema",
+                    "default": "",
+                    "examples": [
+                      "dress-red-small"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "surcharge": {
+                    "$id": "#/properties/listing/properties/item/properties/skus/items/properties/surcharge",
+                    "type": "integer",
+                    "title": "The Surcharge Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "quantity": {
+                    "$id": "#/properties/listing/properties/item/properties/skus/items/properties/quantity",
+                    "type": "integer",
+                    "title": "The Quantity Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "bigSurcharge": {
+                    "$id": "#/properties/listing/properties/item/properties/skus/items/properties/bigSurcharge",
+                    "type": "string",
+                    "title": "The Bigsurcharge Schema",
+                    "default": "",
+                    "examples": [
+                      "100"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "bigQuantity": {
+                    "$id": "#/properties/listing/properties/item/properties/skus/items/properties/bigQuantity",
+                    "type": "string",
+                    "title": "The Bigquantity Schema",
+                    "default": "",
+                    "examples": [
+                      "-1"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            },
+            "priceModifier": {
+              "$id": "#/properties/listing/properties/item/properties/priceModifier",
+              "type": "integer",
+              "title": "The Pricemodifier Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "bigPrice": {
+              "$id": "#/properties/listing/properties/item/properties/bigPrice",
+              "type": "string",
+              "title": "The Bigprice Schema",
+              "default": "",
+              "examples": [
+                "100"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "priceCurrency": {
+              "$id": "#/properties/listing/properties/item/properties/priceCurrency",
+              "type": "object",
+              "title": "The Pricecurrency Schema",
+              "required": [
+                "code",
+                "divisibility"
+              ],
+              "properties": {
+                "code": {
+                  "$id": "#/properties/listing/properties/item/properties/priceCurrency/properties/code",
+                  "type": "string",
+                  "title": "The Code Schema",
+                  "default": "",
+                  "examples": [
+                    "USD"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "divisibility": {
+                  "$id": "#/properties/listing/properties/item/properties/priceCurrency/properties/divisibility",
+                  "type": "integer",
+                  "title": "The Divisibility Schema",
+                  "default": 0,
+                  "examples": [
+                    2
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "shippingOptions": {
+          "$id": "#/properties/listing/properties/shippingOptions",
+          "type": "array",
+          "title": "The Shippingoptions Schema",
+          "items": {
+            "$id": "#/properties/listing/properties/shippingOptions/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "name",
+              "type",
+              "regions",
+              "services"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/listing/properties/shippingOptions/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": [
+                  "Worldwide"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "type": {
+                "$id": "#/properties/listing/properties/shippingOptions/items/properties/type",
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "examples": [
+                  "FIXED_PRICE"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "regions": {
+                "$id": "#/properties/listing/properties/shippingOptions/items/properties/regions",
+                "type": "array",
+                "title": "The Regions Schema",
+                "items": {
+                  "$id": "#/properties/listing/properties/shippingOptions/items/properties/regions/items",
+                  "type": "string",
+                  "title": "The Items Schema",
+                  "default": "",
+                  "examples": [
+                    "ALL"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              },
+              "services": {
+                "$id": "#/properties/listing/properties/shippingOptions/items/properties/services",
+                "type": "array",
+                "title": "The Services Schema",
+                "items": {
+                  "$id": "#/properties/listing/properties/shippingOptions/items/properties/services/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "name",
+                    "price",
+                    "estimatedDelivery",
+                    "additionalItemPrice",
+                    "bigPrice",
+                    "bigAdditionalItemPrice"
+                  ],
+                  "properties": {
+                    "name": {
+                      "$id": "#/properties/listing/properties/shippingOptions/items/properties/services/items/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema",
+                      "default": "",
+                      "examples": [
+                        "Standard"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "price": {
+                      "$id": "#/properties/listing/properties/shippingOptions/items/properties/services/items/properties/price",
+                      "type": "integer",
+                      "title": "The Price Schema",
+                      "default": 0,
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "estimatedDelivery": {
+                      "$id": "#/properties/listing/properties/shippingOptions/items/properties/services/items/properties/estimatedDelivery",
+                      "type": "string",
+                      "title": "The Estimateddelivery Schema",
+                      "default": "",
+                      "examples": [
+                        "3 days"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "additionalItemPrice": {
+                      "$id": "#/properties/listing/properties/shippingOptions/items/properties/services/items/properties/additionalItemPrice",
+                      "type": "integer",
+                      "title": "The Additionalitemprice Schema",
+                      "default": 0,
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "bigPrice": {
+                      "$id": "#/properties/listing/properties/shippingOptions/items/properties/services/items/properties/bigPrice",
+                      "type": "string",
+                      "title": "The Bigprice Schema",
+                      "default": "",
+                      "examples": [
+                        "0"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "bigAdditionalItemPrice": {
+                      "$id": "#/properties/listing/properties/shippingOptions/items/properties/services/items/properties/bigAdditionalItemPrice",
+                      "type": "string",
+                      "title": "The Bigadditionalitemprice Schema",
+                      "default": "",
+                      "examples": [
+                        "0"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "taxes": {
+          "$id": "#/properties/listing/properties/taxes",
+          "type": "array",
+          "title": "The Taxes Schema",
+          "items": {
+            "$id": "#/properties/listing/properties/taxes/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "taxType",
+              "taxRegions",
+              "taxShipping",
+              "percentage"
+            ],
+            "properties": {
+              "taxType": {
+                "$id": "#/properties/listing/properties/taxes/items/properties/taxType",
+                "type": "string",
+                "title": "The Taxtype Schema",
+                "default": "",
+                "examples": [
+                  "Sales tax"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "taxRegions": {
+                "$id": "#/properties/listing/properties/taxes/items/properties/taxRegions",
+                "type": "array",
+                "title": "The Taxregions Schema",
+                "items": {
+                  "$id": "#/properties/listing/properties/taxes/items/properties/taxRegions/items",
+                  "type": "string",
+                  "title": "The Items Schema",
+                  "default": "",
+                  "examples": [
+                    "AUSTRIA"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              },
+              "taxShipping": {
+                "$id": "#/properties/listing/properties/taxes/items/properties/taxShipping",
+                "type": "boolean",
+                "title": "The Taxshipping Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "percentage": {
+                "$id": "#/properties/listing/properties/taxes/items/properties/percentage",
+                "type": "integer",
+                "title": "The Percentage Schema",
+                "default": 0,
+                "examples": [
+                  7
+                ]
+              }
+            }
+          }
+        },
+        "coupons": {
+          "$id": "#/properties/listing/properties/coupons",
+          "type": "array",
+          "title": "The Coupons Schema",
+          "items": {
+            "$id": "#/properties/listing/properties/coupons/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "title",
+              "discountCode"
+            ],
+            "properties": {
+              "title": {
+                "$id": "#/properties/listing/properties/coupons/items/properties/title",
+                "type": "string",
+                "title": "The Title Schema",
+                "default": "",
+                "examples": [
+                  "DASCOUPON"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "discountCode": {
+                "$id": "#/properties/listing/properties/coupons/items/properties/discountCode",
+                "type": "string",
+                "title": "The Discountcode Schema",
+                "default": "",
+                "examples": [
+                  "LETMEIN"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "percentDiscount": {
+                "$id": "#/properties/listing/properties/coupons/items/properties/percentDiscount",
+                "type": "number",
+                "title": "The Percentdiscount Schema",
+                "default": 0,
+                "examples": [
+                  0
+                ]
+              },
+              "priceDiscount": {
+                "$id": "#/properties/listing/properties/coupons/items/properties/priceDiscount",
+                "type": "integer",
+                "title": "The Pricediscount Schema",
+                "default": 0,
+                "examples": [
+                  0
+                ]
+              },
+              "bigPriceDiscount": {
+                "$id": "#/properties/listing/properties/coupons/items/properties/bigPriceDiscount",
+                "type": "string",
+                "title": "The Bigpricediscount Schema",
+                "default": "",
+                "examples": [
+                  "10"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "moderators": {
+          "$id": "#/properties/listing/properties/moderators",
+          "type": "array",
+          "title": "The Moderators Schema",
+          "items": {
+            "$id": "#/properties/listing/properties/moderators/items",
+            "type": "string",
+            "title": "The Items Schema",
+            "default": "",
+            "examples": [
+              "QmcdkKM2fWCKzTZdpjEY6abzRbDhRRJvNmqwNKVyiDtGky"
+            ],
+            "pattern": "^(.*)$"
+          }
+        },
+        "termsAndConditions": {
+          "$id": "#/properties/listing/properties/termsAndConditions",
+          "type": "string",
+          "title": "The Termsandconditions Schema",
+          "default": "",
+          "examples": [
+            "These are my terms and conditions."
+          ],
+          "pattern": "^(.*)$"
+        },
+        "refundPolicy": {
+          "$id": "#/properties/listing/properties/refundPolicy",
+          "type": "string",
+          "title": "The Refundpolicy Schema",
+          "default": "",
+          "examples": [
+            "This is my refund policy."
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "hash": {
+      "$id": "#/properties/hash",
+      "type": "string",
+      "title": "The Hash Schema",
+      "default": "",
+      "examples": [
+        "QmePjhYGVWf6Gqqz1NeLTfi8MooHPixWpsSQMyv73imHom"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "signature": {
+      "$id": "#/properties/signature",
+      "type": "string",
+      "title": "The Signature Schema",
+      "default": "",
+      "examples": [
+        "rbO2Nsuz0tQNK30JZyo9sWLpHPxe9bN627OVQy9/vImzUkA3P7vzu7U8ccaKVZerRh8H76fuEZ9V1gA+sbpOAA=="
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
