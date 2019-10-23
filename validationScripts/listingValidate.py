@@ -8,10 +8,7 @@ with open('../responses/listing.json') as b:
   response = json.load(b)
 
 try:
-    # Read in the JSON document
-    # pyProfileSchema = json.loads(profileSchema)
-    # pyProfile = json.loads(profile)
-    # And validate the result
+    # And validate the response
     jsonschema.validate(instance=response, schema=schema)
     print("Validation test passed!")
 except jsonschema.exceptions.ValidationError as e:
