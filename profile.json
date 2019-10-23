@@ -1,0 +1,28 @@
+{
+    "peerID": "QmVCJiuBY5RPw8wWU85AxzJRkpYZsvDpnYRyGe8opLRJX6",
+    "handle": "",
+    "name": "v5 Seller",
+    "location": "",
+    "about": "The Dude",
+    "shortDescription": "Yo",
+    "nsfw": false,
+    "vendor": true,
+    "moderator": false,
+    "stats": {
+        "followerCount": 7,
+        "followingCount": 0,
+        "listingCount": 2,
+        "ratingCount": 1,
+        "postCount": 0,
+        "averageRating": 5
+    },
+    "bitcoinPubkey": "02657f97b89f6de761fc93c9e61c69d92d2db5fa565bc087476932549d2b103add",
+    "lastModified": "2019-10-22T00:56:15.841731088Z",
+    "currencies": [
+        "BCH",
+        "ZEC",
+        "LTC",
+        "ETH",
+        "BTC"
+    ]
+}
