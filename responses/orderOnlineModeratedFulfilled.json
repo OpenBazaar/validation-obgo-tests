@@ -1,0 +1,482 @@
+{
+  "contract": {
+    "vendorListings": [
+      {
+        "slug": "eth-physical-order-testing-w-options",
+        "vendorID": {
+          "peerID": "QmRGCvxohRX7NtAHJ2vziW6DTitCDJxSsJ3QG7GsJeLgpi",
+          "handle": "",
+          "pubkeys": {
+            "identity": "CAESIIGUD8yv0SatWnhIJfmwu+a+BLVJUwH9Ogd24o1IIqh+",
+            "bitcoin": "A9P3boODWa2rCqxS4GUsV7L/2g3Q1SAXtfYprfFWacTi"
+          },
+          "bitcoinSig": "MEUCIQDhQYRHTwaAb0NrCg59Dme7TBeQTeB+lkyaflV95OOD4QIgPdW++LHapAwciVXWHX6wSlbmCNuczuYAqHv/Dy15c2k="
+        },
+        "metadata": {
+          "version": 5,
+          "contractType": "PHYSICAL_GOOD",
+          "format": "FIXED_PRICE",
+          "expiry": "2037-12-31T05:00:00.000Z",
+          "acceptedCurrencies": [
+            "TBTC",
+            "TBCH",
+            "TLTC",
+            "TZEC",
+            "TETH"
+          ],
+          "pricingCurrency": "",
+          "language": "",
+          "escrowTimeoutHours": 0,
+          "coinType": "",
+          "coinDivisibility": 0,
+          "priceModifier": 0
+        },
+        "item": {
+          "title": "ETH physical order testing w/ options",
+          "description": "This is a listing example for testing orders.",
+          "processingTime": "3 days",
+          "price": 0,
+          "nsfw": false,
+          "tags": [
+            "vintage dress"
+          ],
+          "images": [
+            {
+              "filename": "front",
+              "original": "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq",
+              "large": "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h",
+              "medium": "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF",
+              "small": "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9",
+              "tiny": "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+            },
+            {
+              "filename": "cream",
+              "original": "QmTEUnCjuQPj1ggj5UL5vJujkgBiNYY4jkteugnogiCJny",
+              "large": "QmNsFdsX2LNALG2WBxw6E6FTPZWgJcRAcLHnKdWczrCNf9",
+              "medium": "QmQaSzaoHzp8raZLtPEFyCjTnwfXvDGKdXFM83STDVWG43",
+              "small": "QmP3BVFuga7N4XEX8iU2MFYC7pc6mfTRQRrpZbKiVy2Csr",
+              "tiny": "QmU1cBgjyHpuzDYbEd4iDVuPzxgKM3CqhRhDJqkHWCKBXq"
+            },
+            {
+              "filename": "black",
+              "original": "QmZsZ78FJwt281gfeUvGzDnsBW7WNjPWW3aJWDKskhpCRr",
+              "large": "QmXixGseetihe6vZiWcTw9N1pieok1YtRoxwvyd5d7jz6s",
+              "medium": "QmZydpAJoLsJWbP5vmh59W6bW1kuiCV34yD62hq28AtP7b",
+              "small": "QmcADxUo89ZsEAWiYsuUk7hrgjWDMKXL1CtoA9sTNrQFFP",
+              "tiny": "QmdA3Nmc8VnwSvt98Deo2RQztEiCsAkNLhron73bnBzARe"
+            },
+            {
+              "filename": "other_red",
+              "original": "QmZpgjK4jXmdqPg8Jt9YHGVmiuowVve3sbN2AZx7GXioDF",
+              "large": "QmbSQZNAL3pZspUYWm6WNBD1oEQ6i9EnWPEsnk1DfdKnAv",
+              "medium": "QmcD4pkp7SwCmN95pFnED2hz1LfsoYTPpynxeZbxCMoYPL",
+              "small": "QmRdYph9YrfpdzMsaDnuySj6U4AY9dZhmjd8Cv2e6SscUG",
+              "tiny": "QmbRFtxNWqACak1vvMJrrxUjzWjTJbMqi3vdUK5ZYvibgt"
+            }
+          ],
+          "categories": [
+            "👚 Apparel &amp; Accessories"
+          ],
+          "grams": 0,
+          "condition": "New",
+          "options": [
+            {
+              "name": "Color",
+              "description": "Color of the dress.",
+              "variants": [
+                {
+                  "name": "Red",
+                  "image": {
+                    "filename": "front",
+                    "original": "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq",
+                    "large": "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h",
+                    "medium": "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF",
+                    "small": "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9",
+                    "tiny": "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                  }
+                },
+                {
+                  "name": "Cream",
+                  "image": {
+                    "filename": "cream",
+                    "original": "QmTEUnCjuQPj1ggj5UL5vJujkgBiNYY4jkteugnogiCJny",
+                    "large": "QmNsFdsX2LNALG2WBxw6E6FTPZWgJcRAcLHnKdWczrCNf9",
+                    "medium": "QmQaSzaoHzp8raZLtPEFyCjTnwfXvDGKdXFM83STDVWG43",
+                    "small": "QmP3BVFuga7N4XEX8iU2MFYC7pc6mfTRQRrpZbKiVy2Csr",
+                    "tiny": "QmU1cBgjyHpuzDYbEd4iDVuPzxgKM3CqhRhDJqkHWCKBXq"
+                  }
+                },
+                {
+                  "name": "Black",
+                  "image": {
+                    "filename": "black",
+                    "original": "QmZsZ78FJwt281gfeUvGzDnsBW7WNjPWW3aJWDKskhpCRr",
+                    "large": "QmXixGseetihe6vZiWcTw9N1pieok1YtRoxwvyd5d7jz6s",
+                    "medium": "QmZydpAJoLsJWbP5vmh59W6bW1kuiCV34yD62hq28AtP7b",
+                    "small": "QmcADxUo89ZsEAWiYsuUk7hrgjWDMKXL1CtoA9sTNrQFFP",
+                    "tiny": "QmdA3Nmc8VnwSvt98Deo2RQztEiCsAkNLhron73bnBzARe"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sizes",
+              "description": "Size of the dress.",
+              "variants": [
+                {
+                  "name": "Small"
+                },
+                {
+                  "name": "Medium"
+                },
+                {
+                  "name": "Large"
+                },
+                {
+                  "name": "Extra Large"
+                }
+              ]
+            }
+          ],
+          "skus": [
+            {
+              "variantCombo": [
+                0,
+                0
+              ],
+              "productID": "dress-red-small",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                0,
+                1
+              ],
+              "productID": "dress-red-medium",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                0,
+                2
+              ],
+              "productID": "dress-red-large",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                0,
+                3
+              ],
+              "productID": "dress-red-xlarge",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                1,
+                0
+              ],
+              "productID": "dress-cream-small",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                1,
+                1
+              ],
+              "productID": "dress-cream-medium",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                1,
+                2
+              ],
+              "productID": "dress-cream-large",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                1,
+                3
+              ],
+              "productID": "dress-cream-xlarge",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                2,
+                0
+              ],
+              "productID": "dress-black-small",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                2,
+                1
+              ],
+              "productID": "dress-black-medium",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                2,
+                2
+              ],
+              "productID": "dress-black-large",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            },
+            {
+              "variantCombo": [
+                2,
+                3
+              ],
+              "productID": "dress-black-xlarge",
+              "surcharge": 0,
+              "quantity": 0,
+              "bigSurcharge": "100"
+            }
+          ],
+          "priceModifier": 0,
+          "bigPrice": "100",
+          "priceCurrency": {
+            "code": "USD",
+            "divisibility": 2
+          }
+        },
+        "shippingOptions": [
+          {
+            "name": "Worldwide",
+            "type": "FIXED_PRICE",
+            "regions": [
+              "ALL"
+            ],
+            "services": [
+              {
+                "name": "Standard",
+                "price": 0,
+                "estimatedDelivery": "3 days",
+                "additionalItemPrice": 0,
+                "bigPrice": "0",
+                "bigAdditionalItemPrice": "0"
+              },
+              {
+                "name": "Express",
+                "price": 0,
+                "estimatedDelivery": "3 days",
+                "additionalItemPrice": 0,
+                "bigPrice": "100",
+                "bigAdditionalItemPrice": "100"
+              }
+            ]
+          }
+        ],
+        "coupons": [
+          {
+            "title": "DASCOUPON",
+            "hash": "QmT1BeeCqZe6FzCKYmhaDzUp2DPefzHeeLfF8sj3Vqnia4",
+            "percentDiscount": 0,
+            "priceDiscount": 0,
+            "bigPriceDiscount": "10"
+          }
+        ],
+        "moderators": [
+          "QmcdkKM2fWCKzTZdpjEY6abzRbDhRRJvNmqwNKVyiDtGky"
+        ],
+        "termsAndConditions": "These are my terms and conditions.",
+        "refundPolicy": "This is my refund policy."
+      }
+    ],
+    "buyerOrder": {
+      "refundAddress": "mzPV2inptK78BUDgDWt4GQ1Jj23STwsaJk",
+      "refundFee": 0,
+      "shipping": {
+        "shipTo": "Elwood Blues",
+        "address": "1060 W Addison",
+        "city": "Chicago",
+        "state": "Illinois",
+        "postalCode": "60613",
+        "country": "UNITED_STATES",
+        "addressNotes": ""
+      },
+      "buyerID": {
+        "peerID": "QmW1fE8BeHQGup7gaNLXx2gM1JP27fyxCaHZDoor5F5WGF",
+        "handle": "",
+        "pubkeys": {
+          "identity": "CAESIIcwMkUGnYEFYn75Ed6hjAX0spCWYqBPCAktzXQSByhD",
+          "bitcoin": "AvXo2c7QIOUpZPBHMDx4KzNh8Rm0wiafjYkz5UXFTQ5k"
+        },
+        "bitcoinSig": "MEQCIBHIg8KMIgwxp2eUEquft0/RZvE+U0OQKaFa+njI7z5LAiAkhxzKz+lGq9+L8vR060aCRdQbspJwl5GKTE9EM3MPqw=="
+      },
+      "timestamp": "2019-10-02T01:59:49.258678Z",
+      "items": [
+        {
+          "listingHash": "zb2rhk3mXTJs7aMXzsaiGgoDTk59x7cu5cJthnoos8448oGZu",
+          "quantity": 0,
+          "options": [
+            {
+              "name": "Sizes",
+              "value": "Small"
+            },
+            {
+              "name": "Color",
+              "value": "Red"
+            }
+          ],
+          "shippingOption": {
+            "name": "Worldwide",
+            "service": "Standard"
+          },
+          "memo": "thanks!",
+          "paymentAddress": "",
+          "quantity64": 0,
+          "bigQuantity": "0"
+        }
+      ],
+      "payment": {
+        "method": "MODERATED",
+        "moderator": "QmcdkKM2fWCKzTZdpjEY6abzRbDhRRJvNmqwNKVyiDtGky",
+        "amount": 0,
+        "chaincode": "19cf28652acebdda93589abeac2dd0e78998a6649f696011ca6a79f3e3210009",
+        "address": "tltc1qnwagagvyj5dsx6dz48n7zs6hpwryhaep8csrarwtulhdd4mcvsvqmdj7y5",
+        "redeemScript": "52210210d88fcfe55547ab44cc62aec96f0921612f7e1320c30d1f4d2025996964e6a121027ddd4e7fede5ef3725dfa185609b14be16d86f0a137299ce1fa71ed653a8f8d121027b78dfcb8adda918dbb97d94aa93884947901a7f6b93c6d001b1f3ae21f6c03353ae",
+        "moderatorKey": "Ant438uK3akY27l9lKqTiElHkBp/a5PG0AGx864h9sAz",
+        "coin": "",
+        "bigAmount": "3559244",
+        "amountCurrency": {
+          "code": "TLTC",
+          "divisibility": 8
+        }
+      },
+      "ratingKeys": [
+        "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP"
+      ],
+      "alternateContactInfo": "",
+      "version": 2,
+      "bigRefundFee": "78"
+    },
+    "vendorOrderConfirmation": {
+      "orderID": "QmfYUVq8puk64Vc7FjDv4dE7XHGotJtij9yF6jejLnmrjg",
+      "timestamp": "2019-10-02T01:59:53.817249Z",
+      "paymentAddress": "tltc1qnwagagvyj5dsx6dz48n7zs6hpwryhaep8csrarwtulhdd4mcvsvqmdj7y5",
+      "requestedAmount": 0,
+      "ratingSignatures": [
+        {
+          "metadata": {
+            "listingSlug": "eth-physical-order-testing-w-options",
+            "moderatorKey": "Ant438uK3akY27l9lKqTiElHkBp/a5PG0AGx864h9sAz",
+            "listingTitle": "ETH physical order testing w/ options",
+            "thumbnail": {
+              "tiny": "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz",
+              "small": "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9",
+              "medium": "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF",
+              "large": "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h",
+              "original": "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+            }
+          },
+          "signature": "KZXUbGEOKo/e8+ueE3QcRNKUGf+ak533qB45IO/SCz5gNKFf12BElh8HvDLQyX/7vrc5nnN6D2OVj3IMu260AA=="
+        }
+      ],
+      "bigRequestedAmount": "3559244"
+    },
+    "vendorOrderFulfillment": [
+      {
+        "orderId": "QmfYUVq8puk64Vc7FjDv4dE7XHGotJtij9yF6jejLnmrjg",
+        "slug": "eth-physical-order-testing-w-options",
+        "timestamp": "2019-10-02T02:05:40.241426Z",
+        "physicalDelivery": [
+          {
+            "shipper": "UPS",
+            "trackingNumber": "1Z204E380338943508"
+          }
+        ],
+        "payout": {
+          "sigs": [
+            {
+              "inputIndex": 0,
+              "signature": "MEUCIQC8xuSaRlQ6p6YkcUkJx9oG1dRhcJAgY2gPRrXfJFgB3wIgCsNgdlHZwrIkH9DWjBys8E+VgkoiXlMOxVWejL7eDfcB"
+            }
+          ],
+          "payoutAddress": "mgSz1cFa93mCTk4pGRizG8fhvtghe5fumD",
+          "payoutFeePerByte": 0,
+          "bigPayoutFeePerByte": "78"
+        },
+        "ratingSignature": {
+          "metadata": {
+            "listingSlug": "eth-physical-order-testing-w-options",
+            "ratingKey": "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP",
+            "listingTitle": "ETH physical order testing w/ options",
+            "thumbnail": {
+              "tiny": "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz",
+              "small": "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9",
+              "medium": "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF",
+              "large": "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h",
+              "original": "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+            }
+          },
+          "signature": "0YeXRrRpYga02xol3milH/cs8r2R66d++MzgFu4h+NvFaycjnGsoFNByPCBGrK9zh5dOa2uQDZswpvBRQbKzAw=="
+        },
+        "note": ""
+      }
+    ],
+    "signatures": [
+      {
+        "section": "LISTING",
+        "signatureBytes": "2n03BKKZoI80QxMXyTCn+LcibMYm5r43vcNnBg3wv66P5M/HNdTmAr6lbZecQum7CjQDy9sanTeimJn3ebbkCg=="
+      },
+      {
+        "section": "ORDER",
+        "signatureBytes": "k2OkiU39fKMv2YadiO9j390lsB1BqhUxquMZLSZjV88JjTyHBK6FkSQVkCRKh6lCmEqRh2+agu1o1qDfo55BDQ=="
+      },
+      {
+        "section": "ORDER_CONFIRMATION",
+        "signatureBytes": "AkZziyRLSsh6GA3OVljQznzbj8fMjp+esGgSg08jobCYD+fTnT2pZwBf6+h6M0COvY/NVAOZQrdHvMVX9mX1DA=="
+      },
+      {
+        "section": "ORDER_FULFILLMENT",
+        "signatureBytes": "GdWYgUpNwE2AKthxqGVb8qum56JyUfNJD0P7tg08xgSlQewBLAWz69Cei6pEpjWYKEBEC4X4DrosNeX31ZJhBw=="
+      }
+    ]
+  },
+  "state": "FULFILLED",
+  "read": false,
+  "funded": true,
+  "unreadChatMessages": 0,
+  "paymentAddressTransactions": [
+    {
+      "txid": "e0e7650e33d719742d4dad52c9f294ad069e98885ab9eb4cb49095ac0f311a89",
+      "value": 0,
+      "confirmations": 1,
+      "height": 1207456,
+      "timestamp": "2019-10-02T02:01:26.971737Z",
+      "currency": {
+        "code": "TLTC",
+        "divisibility": 8
+      },
+      "bigValue": "3559244"
+    }
+  ]
+}

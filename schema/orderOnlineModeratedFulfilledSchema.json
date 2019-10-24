@@ -1,0 +1,2174 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "contract",
+    "state",
+    "read",
+    "funded",
+    "unreadChatMessages",
+    "paymentAddressTransactions"
+  ],
+  "properties": {
+    "contract": {
+      "$id": "#/properties/contract",
+      "type": "object",
+      "title": "The Contract Schema",
+      "required": [
+        "vendorListings",
+        "buyerOrder",
+        "vendorOrderConfirmation",
+        "vendorOrderFulfillment",
+        "signatures"
+      ],
+      "properties": {
+        "vendorListings": {
+          "$id": "#/properties/contract/properties/vendorListings",
+          "type": "array",
+          "title": "The Vendorlistings Schema",
+          "items": {
+            "$id": "#/properties/contract/properties/vendorListings/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "slug",
+              "vendorID",
+              "metadata",
+              "item",
+              "shippingOptions",
+              "coupons",
+              "moderators",
+              "termsAndConditions",
+              "refundPolicy"
+            ],
+            "properties": {
+              "slug": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/slug",
+                "type": "string",
+                "title": "The Slug Schema",
+                "default": "",
+                "examples": [
+                  "eth-physical-order-testing-w-options"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "vendorID": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/vendorID",
+                "type": "object",
+                "title": "The Vendorid Schema",
+                "required": [
+                  "peerID",
+                  "handle",
+                  "pubkeys",
+                  "bitcoinSig"
+                ],
+                "properties": {
+                  "peerID": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/vendorID/properties/peerID",
+                    "type": "string",
+                    "title": "The Peerid Schema",
+                    "default": "",
+                    "examples": [
+                      "QmRGCvxohRX7NtAHJ2vziW6DTitCDJxSsJ3QG7GsJeLgpi"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "handle": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/vendorID/properties/handle",
+                    "type": "string",
+                    "title": "The Handle Schema",
+                    "default": "",
+                    "examples": [
+                      ""
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "pubkeys": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/vendorID/properties/pubkeys",
+                    "type": "object",
+                    "title": "The Pubkeys Schema",
+                    "required": [
+                      "identity",
+                      "bitcoin"
+                    ],
+                    "properties": {
+                      "identity": {
+                        "$id": "#/properties/contract/properties/vendorListings/items/properties/vendorID/properties/pubkeys/properties/identity",
+                        "type": "string",
+                        "title": "The Identity Schema",
+                        "default": "",
+                        "examples": [
+                          "CAESIIGUD8yv0SatWnhIJfmwu+a+BLVJUwH9Ogd24o1IIqh+"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "bitcoin": {
+                        "$id": "#/properties/contract/properties/vendorListings/items/properties/vendorID/properties/pubkeys/properties/bitcoin",
+                        "type": "string",
+                        "title": "The Bitcoin Schema",
+                        "default": "",
+                        "examples": [
+                          "A9P3boODWa2rCqxS4GUsV7L/2g3Q1SAXtfYprfFWacTi"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  },
+                  "bitcoinSig": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/vendorID/properties/bitcoinSig",
+                    "type": "string",
+                    "title": "The Bitcoinsig Schema",
+                    "default": "",
+                    "examples": [
+                      "MEUCIQDhQYRHTwaAb0NrCg59Dme7TBeQTeB+lkyaflV95OOD4QIgPdW++LHapAwciVXWHX6wSlbmCNuczuYAqHv/Dy15c2k="
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "metadata": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata",
+                "type": "object",
+                "title": "The Metadata Schema",
+                "required": [
+                  "version",
+                  "contractType",
+                  "format",
+                  "expiry",
+                  "acceptedCurrencies",
+                  "pricingCurrency",
+                  "language",
+                  "escrowTimeoutHours",
+                  "coinType",
+                  "coinDivisibility",
+                  "priceModifier"
+                ],
+                "properties": {
+                  "version": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/version",
+                    "type": "integer",
+                    "title": "The Version Schema",
+                    "default": 0,
+                    "examples": [
+                      5
+                    ]
+                  },
+                  "contractType": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/contractType",
+                    "type": "string",
+                    "title": "The Contracttype Schema",
+                    "default": "",
+                    "examples": [
+                      "PHYSICAL_GOOD"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "format": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/format",
+                    "type": "string",
+                    "title": "The Format Schema",
+                    "default": "",
+                    "examples": [
+                      "FIXED_PRICE"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "expiry": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/expiry",
+                    "type": "string",
+                    "title": "The Expiry Schema",
+                    "default": "",
+                    "examples": [
+                      "2037-12-31T05:00:00.000Z"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "acceptedCurrencies": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/acceptedCurrencies",
+                    "type": "array",
+                    "title": "The Acceptedcurrencies Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/acceptedCurrencies/items",
+                      "type": "string",
+                      "title": "The Items Schema",
+                      "default": "",
+                      "examples": [
+                        "TBTC",
+                        "TBCH",
+                        "TLTC",
+                        "TZEC",
+                        "TETH"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  },
+                  "pricingCurrency": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/pricingCurrency",
+                    "type": "string",
+                    "title": "The Pricingcurrency Schema",
+                    "default": "",
+                    "examples": [
+                      ""
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "language": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/language",
+                    "type": "string",
+                    "title": "The Language Schema",
+                    "default": "",
+                    "examples": [
+                      ""
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "escrowTimeoutHours": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/escrowTimeoutHours",
+                    "type": "integer",
+                    "title": "The Escrowtimeouthours Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "coinType": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/coinType",
+                    "type": "string",
+                    "title": "The Cointype Schema",
+                    "default": "",
+                    "examples": [
+                      ""
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "coinDivisibility": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/coinDivisibility",
+                    "type": "integer",
+                    "title": "The Coindivisibility Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "priceModifier": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/metadata/properties/priceModifier",
+                    "type": "integer",
+                    "title": "The Pricemodifier Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  }
+                }
+              },
+              "item": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/item",
+                "type": "object",
+                "title": "The Item Schema",
+                "required": [
+                  "title",
+                  "description",
+                  "processingTime",
+                  "price",
+                  "nsfw",
+                  "tags",
+                  "images",
+                  "categories",
+                  "options",
+                  "skus",
+                  "priceModifier",
+                  "bigPrice",
+                  "priceCurrency"
+                ],
+                "properties": {
+                  "title": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema",
+                    "default": "",
+                    "examples": [
+                      "ETH physical order testing w/ options"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "description": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/description",
+                    "type": "string",
+                    "title": "The Description Schema",
+                    "default": "",
+                    "examples": [
+                      "This is a listing example for testing orders."
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "processingTime": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/processingTime",
+                    "type": "string",
+                    "title": "The Processingtime Schema",
+                    "default": "",
+                    "examples": [
+                      "3 days"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "price": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/price",
+                    "type": "integer",
+                    "title": "The Price Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "nsfw": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/nsfw",
+                    "type": "boolean",
+                    "title": "The Nsfw Schema",
+                    "default": false,
+                    "examples": [
+                      false
+                    ]
+                  },
+                  "tags": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/tags",
+                    "type": "array",
+                    "title": "The Tags Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/tags/items",
+                      "type": "string",
+                      "title": "The Items Schema",
+                      "default": "",
+                      "examples": [
+                        "vintage dress"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  },
+                  "images": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images",
+                    "type": "array",
+                    "title": "The Images Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "filename",
+                        "original",
+                        "large",
+                        "medium",
+                        "small",
+                        "tiny"
+                      ],
+                      "properties": {
+                        "filename": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images/items/properties/filename",
+                          "type": "string",
+                          "title": "The Filename Schema",
+                          "default": "",
+                          "examples": [
+                            "front"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "original": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images/items/properties/original",
+                          "type": "string",
+                          "title": "The Original Schema",
+                          "default": "",
+                          "examples": [
+                            "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "large": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images/items/properties/large",
+                          "type": "string",
+                          "title": "The Large Schema",
+                          "default": "",
+                          "examples": [
+                            "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "medium": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images/items/properties/medium",
+                          "type": "string",
+                          "title": "The Medium Schema",
+                          "default": "",
+                          "examples": [
+                            "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "small": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images/items/properties/small",
+                          "type": "string",
+                          "title": "The Small Schema",
+                          "default": "",
+                          "examples": [
+                            "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "tiny": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/images/items/properties/tiny",
+                          "type": "string",
+                          "title": "The Tiny Schema",
+                          "default": "",
+                          "examples": [
+                            "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  },
+                  "categories": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/categories",
+                    "type": "array",
+                    "title": "The Categories Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/categories/items",
+                      "type": "string",
+                      "title": "The Items Schema",
+                      "default": "",
+                      "examples": [
+                        "👚 Apparel &amp; Accessories"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  },
+                  "grams": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/grams",
+                    "type": "integer",
+                    "title": "The Grams Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "condition": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/condition",
+                    "type": "string",
+                    "title": "The Condition Schema",
+                    "default": "",
+                    "examples": [
+                      "New"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "options": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options",
+                    "type": "array",
+                    "title": "The Options Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "name",
+                        "description",
+                        "variants"
+                      ],
+                      "properties": {
+                        "name": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/name",
+                          "type": "string",
+                          "title": "The Name Schema",
+                          "default": "",
+                          "examples": [
+                            "Color"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "description": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/description",
+                          "type": "string",
+                          "title": "The Description Schema",
+                          "default": "",
+                          "examples": [
+                            "Color of the dress."
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "variants": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants",
+                          "type": "array",
+                          "title": "The Variants Schema",
+                          "items": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items",
+                            "type": "object",
+                            "title": "The Items Schema",
+                            "required": [
+                              "name"
+                            ],
+                            "properties": {
+                              "name": {
+                                "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/name",
+                                "type": "string",
+                                "title": "The Name Schema",
+                                "default": "",
+                                "examples": [
+                                  "Red"
+                                ],
+                                "pattern": "^(.*)$"
+                              },
+                              "image": {
+                                "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/image",
+                                "type": "object",
+                                "title": "The Image Schema",
+                                "required": [
+                                  "filename",
+                                  "original",
+                                  "large",
+                                  "medium",
+                                  "small",
+                                  "tiny"
+                                ],
+                                "properties": {
+                                  "filename": {
+                                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/image/properties/filename",
+                                    "type": "string",
+                                    "title": "The Filename Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "front"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "original": {
+                                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/image/properties/original",
+                                    "type": "string",
+                                    "title": "The Original Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "large": {
+                                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/image/properties/large",
+                                    "type": "string",
+                                    "title": "The Large Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "medium": {
+                                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/image/properties/medium",
+                                    "type": "string",
+                                    "title": "The Medium Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "small": {
+                                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/image/properties/small",
+                                    "type": "string",
+                                    "title": "The Small Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "tiny": {
+                                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/options/items/properties/variants/items/properties/image/properties/tiny",
+                                    "type": "string",
+                                    "title": "The Tiny Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "skus": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus",
+                    "type": "array",
+                    "title": "The Skus Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "variantCombo",
+                        "productID",
+                        "surcharge",
+                        "quantity",
+                        "bigSurcharge"
+                      ],
+                      "properties": {
+                        "variantCombo": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus/items/properties/variantCombo",
+                          "type": "array",
+                          "title": "The Variantcombo Schema",
+                          "items": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus/items/properties/variantCombo/items",
+                            "type": "integer",
+                            "title": "The Items Schema",
+                            "default": 0,
+                            "examples": [
+                              0,
+                              0
+                            ]
+                          }
+                        },
+                        "productID": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus/items/properties/productID",
+                          "type": "string",
+                          "title": "The Productid Schema",
+                          "default": "",
+                          "examples": [
+                            "dress-red-small"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "surcharge": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus/items/properties/surcharge",
+                          "type": "integer",
+                          "title": "The Surcharge Schema",
+                          "default": 0,
+                          "examples": [
+                            0
+                          ]
+                        },
+                        "quantity": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus/items/properties/quantity",
+                          "type": "integer",
+                          "title": "The Quantity Schema",
+                          "default": 0,
+                          "examples": [
+                            0
+                          ]
+                        },
+                        "bigSurcharge": {
+                          "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/skus/items/properties/bigSurcharge",
+                          "type": "string",
+                          "title": "The Bigsurcharge Schema",
+                          "default": "",
+                          "examples": [
+                            "100"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  },
+                  "priceModifier": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/priceModifier",
+                    "type": "integer",
+                    "title": "The Pricemodifier Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "bigPrice": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/bigPrice",
+                    "type": "string",
+                    "title": "The Bigprice Schema",
+                    "default": "",
+                    "examples": [
+                      "100"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "priceCurrency": {
+                    "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/priceCurrency",
+                    "type": "object",
+                    "title": "The Pricecurrency Schema",
+                    "required": [
+                      "code",
+                      "divisibility"
+                    ],
+                    "properties": {
+                      "code": {
+                        "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/priceCurrency/properties/code",
+                        "type": "string",
+                        "title": "The Code Schema",
+                        "default": "",
+                        "examples": [
+                          "USD"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "divisibility": {
+                        "$id": "#/properties/contract/properties/vendorListings/items/properties/item/properties/priceCurrency/properties/divisibility",
+                        "type": "integer",
+                        "title": "The Divisibility Schema",
+                        "default": 0,
+                        "examples": [
+                          2
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "shippingOptions": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions",
+                "type": "array",
+                "title": "The Shippingoptions Schema",
+                "items": {
+                  "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "name",
+                    "type",
+                    "regions",
+                    "services"
+                  ],
+                  "properties": {
+                    "name": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema",
+                      "default": "",
+                      "examples": [
+                        "Worldwide"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "type": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "FIXED_PRICE"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "regions": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/regions",
+                      "type": "array",
+                      "title": "The Regions Schema",
+                      "items": {
+                        "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/regions/items",
+                        "type": "string",
+                        "title": "The Items Schema",
+                        "default": "",
+                        "examples": [
+                          "ALL"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    },
+                    "services": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services",
+                      "type": "array",
+                      "title": "The Services Schema",
+                      "items": {
+                        "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services/items",
+                        "type": "object",
+                        "title": "The Items Schema",
+                        "required": [
+                          "name",
+                          "price",
+                          "estimatedDelivery",
+                          "additionalItemPrice",
+                          "bigPrice",
+                          "bigAdditionalItemPrice"
+                        ],
+                        "properties": {
+                          "name": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services/items/properties/name",
+                            "type": "string",
+                            "title": "The Name Schema",
+                            "default": "",
+                            "examples": [
+                              "Standard"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "price": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services/items/properties/price",
+                            "type": "integer",
+                            "title": "The Price Schema",
+                            "default": 0,
+                            "examples": [
+                              0
+                            ]
+                          },
+                          "estimatedDelivery": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services/items/properties/estimatedDelivery",
+                            "type": "string",
+                            "title": "The Estimateddelivery Schema",
+                            "default": "",
+                            "examples": [
+                              "3 days"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "additionalItemPrice": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services/items/properties/additionalItemPrice",
+                            "type": "integer",
+                            "title": "The Additionalitemprice Schema",
+                            "default": 0,
+                            "examples": [
+                              0
+                            ]
+                          },
+                          "bigPrice": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services/items/properties/bigPrice",
+                            "type": "string",
+                            "title": "The Bigprice Schema",
+                            "default": "",
+                            "examples": [
+                              "0"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "bigAdditionalItemPrice": {
+                            "$id": "#/properties/contract/properties/vendorListings/items/properties/shippingOptions/items/properties/services/items/properties/bigAdditionalItemPrice",
+                            "type": "string",
+                            "title": "The Bigadditionalitemprice Schema",
+                            "default": "",
+                            "examples": [
+                              "0"
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "coupons": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/coupons",
+                "type": "array",
+                "title": "The Coupons Schema",
+                "items": {
+                  "$id": "#/properties/contract/properties/vendorListings/items/properties/coupons/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "title",
+                    "hash"
+                  ],
+                  "properties": {
+                    "title": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/coupons/items/properties/title",
+                      "type": "string",
+                      "title": "The Title Schema",
+                      "default": "",
+                      "examples": [
+                        "DASCOUPON"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "hash": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/coupons/items/properties/hash",
+                      "type": "string",
+                      "title": "The Hash Schema",
+                      "default": "",
+                      "examples": [
+                        "QmT1BeeCqZe6FzCKYmhaDzUp2DPefzHeeLfF8sj3Vqnia4"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "percentDiscount": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/coupons/items/properties/percentDiscount",
+                      "type": "integer",
+                      "title": "The Percentdiscount Schema",
+                      "default": 0,
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "priceDiscount": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/coupons/items/properties/priceDiscount",
+                      "type": "integer",
+                      "title": "The Pricediscount Schema",
+                      "default": 0,
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "bigPriceDiscount": {
+                      "$id": "#/properties/contract/properties/vendorListings/items/properties/coupons/items/properties/bigPriceDiscount",
+                      "type": "string",
+                      "title": "The Bigpricediscount Schema",
+                      "default": "",
+                      "examples": [
+                        "10"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              },
+              "moderators": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/moderators",
+                "type": "array",
+                "title": "The Moderators Schema",
+                "items": {
+                  "$id": "#/properties/contract/properties/vendorListings/items/properties/moderators/items",
+                  "type": "string",
+                  "title": "The Items Schema",
+                  "default": "",
+                  "examples": [
+                    "QmcdkKM2fWCKzTZdpjEY6abzRbDhRRJvNmqwNKVyiDtGky"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              },
+              "termsAndConditions": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/termsAndConditions",
+                "type": "string",
+                "title": "The Termsandconditions Schema",
+                "default": "",
+                "examples": [
+                  "These are my terms and conditions."
+                ],
+                "pattern": "^(.*)$"
+              },
+              "refundPolicy": {
+                "$id": "#/properties/contract/properties/vendorListings/items/properties/refundPolicy",
+                "type": "string",
+                "title": "The Refundpolicy Schema",
+                "default": "",
+                "examples": [
+                  "This is my refund policy."
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "buyerOrder": {
+          "$id": "#/properties/contract/properties/buyerOrder",
+          "type": "object",
+          "title": "The Buyerorder Schema",
+          "required": [
+            "refundAddress",
+            "refundFee",
+            "shipping",
+            "buyerID",
+            "timestamp",
+            "items",
+            "payment",
+            "ratingKeys",
+            "alternateContactInfo",
+            "version",
+            "bigRefundFee"
+          ],
+          "properties": {
+            "refundAddress": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/refundAddress",
+              "type": "string",
+              "title": "The Refundaddress Schema",
+              "default": "",
+              "examples": [
+                "mzPV2inptK78BUDgDWt4GQ1Jj23STwsaJk"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "refundFee": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/refundFee",
+              "type": "integer",
+              "title": "The Refundfee Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "shipping": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/shipping",
+              "type": "object",
+              "title": "The Shipping Schema",
+              "required": [
+                "shipTo",
+                "address",
+                "city",
+                "country"
+              ],
+              "properties": {
+                "shipTo": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/shipping/properties/shipTo",
+                  "type": "string",
+                  "title": "The Shipto Schema",
+                  "default": "",
+                  "examples": [
+                    "Elwood Blues"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "address": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/shipping/properties/address",
+                  "type": "string",
+                  "title": "The Address Schema",
+                  "default": "",
+                  "examples": [
+                    "1060 W Addison"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "city": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/shipping/properties/city",
+                  "type": "string",
+                  "title": "The City Schema",
+                  "default": "",
+                  "examples": [
+                    "Chicago"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "state": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/shipping/properties/state",
+                  "type": "string",
+                  "title": "The State Schema",
+                  "default": "",
+                  "examples": [
+                    "Illinois"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "postalCode": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/shipping/properties/postalCode",
+                  "type": "string",
+                  "title": "The Postalcode Schema",
+                  "default": "",
+                  "examples": [
+                    "60613"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "country": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/shipping/properties/country",
+                  "type": "string",
+                  "title": "The Country Schema",
+                  "default": "",
+                  "examples": [
+                    "UNITED_STATES"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "addressNotes": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/shipping/properties/addressNotes",
+                  "type": "string",
+                  "title": "The Addressnotes Schema",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "buyerID": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/buyerID",
+              "type": "object",
+              "title": "The Buyerid Schema",
+              "required": [
+                "peerID",
+                "handle",
+                "pubkeys",
+                "bitcoinSig"
+              ],
+              "properties": {
+                "peerID": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/buyerID/properties/peerID",
+                  "type": "string",
+                  "title": "The Peerid Schema",
+                  "default": "",
+                  "examples": [
+                    "QmW1fE8BeHQGup7gaNLXx2gM1JP27fyxCaHZDoor5F5WGF"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "handle": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/buyerID/properties/handle",
+                  "type": "string",
+                  "title": "The Handle Schema",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "pubkeys": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/buyerID/properties/pubkeys",
+                  "type": "object",
+                  "title": "The Pubkeys Schema",
+                  "required": [
+                    "identity",
+                    "bitcoin"
+                  ],
+                  "properties": {
+                    "identity": {
+                      "$id": "#/properties/contract/properties/buyerOrder/properties/buyerID/properties/pubkeys/properties/identity",
+                      "type": "string",
+                      "title": "The Identity Schema",
+                      "default": "",
+                      "examples": [
+                        "CAESIIcwMkUGnYEFYn75Ed6hjAX0spCWYqBPCAktzXQSByhD"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "bitcoin": {
+                      "$id": "#/properties/contract/properties/buyerOrder/properties/buyerID/properties/pubkeys/properties/bitcoin",
+                      "type": "string",
+                      "title": "The Bitcoin Schema",
+                      "default": "",
+                      "examples": [
+                        "AvXo2c7QIOUpZPBHMDx4KzNh8Rm0wiafjYkz5UXFTQ5k"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                },
+                "bitcoinSig": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/buyerID/properties/bitcoinSig",
+                  "type": "string",
+                  "title": "The Bitcoinsig Schema",
+                  "default": "",
+                  "examples": [
+                    "MEQCIBHIg8KMIgwxp2eUEquft0/RZvE+U0OQKaFa+njI7z5LAiAkhxzKz+lGq9+L8vR060aCRdQbspJwl5GKTE9EM3MPqw=="
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "timestamp": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/timestamp",
+              "type": "string",
+              "title": "The Timestamp Schema",
+              "default": "",
+              "examples": [
+                "2019-10-02T01:59:49.258678Z"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "items": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/items",
+              "type": "array",
+              "title": "The Items Schema",
+              "items": {
+                "$id": "#/properties/contract/properties/buyerOrder/properties/items/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "listingHash",
+                  "quantity",
+                  "options",
+                  "shippingOption",
+                  "memo",
+                  "paymentAddress",
+                  "bigQuantity"
+                ],
+                "properties": {
+                  "listingHash": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/listingHash",
+                    "type": "string",
+                    "title": "The Listinghash Schema",
+                    "default": "",
+                    "examples": [
+                      "zb2rhk3mXTJs7aMXzsaiGgoDTk59x7cu5cJthnoos8448oGZu"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "quantity": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/quantity",
+                    "type": "integer",
+                    "title": "The Quantity Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "options": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/options",
+                    "type": "array",
+                    "title": "The Options Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/options/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "name",
+                        "value"
+                      ],
+                      "properties": {
+                        "name": {
+                          "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/options/items/properties/name",
+                          "type": "string",
+                          "title": "The Name Schema",
+                          "default": "",
+                          "examples": [
+                            "Sizes"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "value": {
+                          "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/options/items/properties/value",
+                          "type": "string",
+                          "title": "The Value Schema",
+                          "default": "",
+                          "examples": [
+                            "Small"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  },
+                  "shippingOption": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/shippingOption",
+                    "type": "object",
+                    "title": "The Shippingoption Schema",
+                    "required": [
+                      "name",
+                      "service"
+                    ],
+                    "properties": {
+                      "name": {
+                        "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/shippingOption/properties/name",
+                        "type": "string",
+                        "title": "The Name Schema",
+                        "default": "",
+                        "examples": [
+                          "Worldwide"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "service": {
+                        "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/shippingOption/properties/service",
+                        "type": "string",
+                        "title": "The Service Schema",
+                        "default": "",
+                        "examples": [
+                          "Standard"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  },
+                  "memo": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/memo",
+                    "type": "string",
+                    "title": "The Memo Schema",
+                    "default": "",
+                    "examples": [
+                      "thanks!"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "paymentAddress": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/paymentAddress",
+                    "type": "string",
+                    "title": "The Paymentaddress Schema",
+                    "default": "",
+                    "examples": [
+                      ""
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "quantity64": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/quantity64",
+                    "type": "integer",
+                    "title": "The Quantity64 Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "bigQuantity": {
+                    "$id": "#/properties/contract/properties/buyerOrder/properties/items/items/properties/bigQuantity",
+                    "type": "string",
+                    "title": "The Bigquantity Schema",
+                    "default": "",
+                    "examples": [
+                      "0"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            },
+            "payment": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/payment",
+              "type": "object",
+              "title": "The Payment Schema",
+              "required": [
+                "method",
+                "moderator",
+                "amount",
+                "chaincode",
+                "address",
+                "redeemScript",
+                "moderatorKey",
+                "coin",
+                "bigAmount",
+                "amountCurrency"
+              ],
+              "properties": {
+                "method": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/method",
+                  "type": "string",
+                  "title": "The Method Schema",
+                  "default": "",
+                  "examples": [
+                    "MODERATED"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "moderator": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/moderator",
+                  "type": "string",
+                  "title": "The Moderator Schema",
+                  "default": "",
+                  "examples": [
+                    "QmcdkKM2fWCKzTZdpjEY6abzRbDhRRJvNmqwNKVyiDtGky"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "amount": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/amount",
+                  "type": "integer",
+                  "title": "The Amount Schema",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "chaincode": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/chaincode",
+                  "type": "string",
+                  "title": "The Chaincode Schema",
+                  "default": "",
+                  "examples": [
+                    "19cf28652acebdda93589abeac2dd0e78998a6649f696011ca6a79f3e3210009"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "address": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/address",
+                  "type": "string",
+                  "title": "The Address Schema",
+                  "default": "",
+                  "examples": [
+                    "tltc1qnwagagvyj5dsx6dz48n7zs6hpwryhaep8csrarwtulhdd4mcvsvqmdj7y5"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "redeemScript": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/redeemScript",
+                  "type": "string",
+                  "title": "The Redeemscript Schema",
+                  "default": "",
+                  "examples": [
+                    "52210210d88fcfe55547ab44cc62aec96f0921612f7e1320c30d1f4d2025996964e6a121027ddd4e7fede5ef3725dfa185609b14be16d86f0a137299ce1fa71ed653a8f8d121027b78dfcb8adda918dbb97d94aa93884947901a7f6b93c6d001b1f3ae21f6c03353ae"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "moderatorKey": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/moderatorKey",
+                  "type": "string",
+                  "title": "The Moderatorkey Schema",
+                  "default": "",
+                  "examples": [
+                    "Ant438uK3akY27l9lKqTiElHkBp/a5PG0AGx864h9sAz"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "coin": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/coin",
+                  "type": "string",
+                  "title": "The Coin Schema",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "bigAmount": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/bigAmount",
+                  "type": "string",
+                  "title": "The Bigamount Schema",
+                  "default": "",
+                  "examples": [
+                    "3559244"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "amountCurrency": {
+                  "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/amountCurrency",
+                  "type": "object",
+                  "title": "The Amountcurrency Schema",
+                  "required": [
+                    "code",
+                    "divisibility"
+                  ],
+                  "properties": {
+                    "code": {
+                      "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/amountCurrency/properties/code",
+                      "type": "string",
+                      "title": "The Code Schema",
+                      "default": "",
+                      "examples": [
+                        "TLTC"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "divisibility": {
+                      "$id": "#/properties/contract/properties/buyerOrder/properties/payment/properties/amountCurrency/properties/divisibility",
+                      "type": "integer",
+                      "title": "The Divisibility Schema",
+                      "default": 0,
+                      "examples": [
+                        8
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "ratingKeys": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/ratingKeys",
+              "type": "array",
+              "title": "The Ratingkeys Schema",
+              "items": {
+                "$id": "#/properties/contract/properties/buyerOrder/properties/ratingKeys/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP"
+                ],
+                "pattern": "^(.*)$"
+              }
+            },
+            "alternateContactInfo": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/alternateContactInfo",
+              "type": "string",
+              "title": "The Alternatecontactinfo Schema",
+              "default": "",
+              "examples": [
+                ""
+              ],
+              "pattern": "^(.*)$"
+            },
+            "version": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/version",
+              "type": "integer",
+              "title": "The Version Schema",
+              "default": 0,
+              "examples": [
+                2
+              ]
+            },
+            "bigRefundFee": {
+              "$id": "#/properties/contract/properties/buyerOrder/properties/bigRefundFee",
+              "type": "string",
+              "title": "The Bigrefundfee Schema",
+              "default": "",
+              "examples": [
+                "78"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "vendorOrderConfirmation": {
+          "$id": "#/properties/contract/properties/vendorOrderConfirmation",
+          "type": "object",
+          "title": "The Vendororderconfirmation Schema",
+          "required": [
+            "orderID",
+            "timestamp",
+            "paymentAddress",
+            "requestedAmount",
+            "ratingSignatures",
+            "bigRequestedAmount"
+          ],
+          "properties": {
+            "orderID": {
+              "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/orderID",
+              "type": "string",
+              "title": "The Orderid Schema",
+              "default": "",
+              "examples": [
+                "QmfYUVq8puk64Vc7FjDv4dE7XHGotJtij9yF6jejLnmrjg"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "timestamp": {
+              "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/timestamp",
+              "type": "string",
+              "title": "The Timestamp Schema",
+              "default": "",
+              "examples": [
+                "2019-10-02T01:59:53.817249Z"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "paymentAddress": {
+              "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/paymentAddress",
+              "type": "string",
+              "title": "The Paymentaddress Schema",
+              "default": "",
+              "examples": [
+                "tltc1qnwagagvyj5dsx6dz48n7zs6hpwryhaep8csrarwtulhdd4mcvsvqmdj7y5"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "requestedAmount": {
+              "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/requestedAmount",
+              "type": "integer",
+              "title": "The Requestedamount Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "ratingSignatures": {
+              "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures",
+              "type": "array",
+              "title": "The Ratingsignatures Schema",
+              "items": {
+                "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "metadata",
+                  "signature"
+                ],
+                "properties": {
+                  "metadata": {
+                    "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata",
+                    "type": "object",
+                    "title": "The Metadata Schema",
+                    "required": [
+                      "listingSlug",
+                      "moderatorKey",
+                      "listingTitle",
+                      "thumbnail"
+                    ],
+                    "properties": {
+                      "listingSlug": {
+                        "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/listingSlug",
+                        "type": "string",
+                        "title": "The Listingslug Schema",
+                        "default": "",
+                        "examples": [
+                          "eth-physical-order-testing-w-options"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "moderatorKey": {
+                        "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/moderatorKey",
+                        "type": "string",
+                        "title": "The Moderatorkey Schema",
+                        "default": "",
+                        "examples": [
+                          "Ant438uK3akY27l9lKqTiElHkBp/a5PG0AGx864h9sAz"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "listingTitle": {
+                        "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/listingTitle",
+                        "type": "string",
+                        "title": "The Listingtitle Schema",
+                        "default": "",
+                        "examples": [
+                          "ETH physical order testing w/ options"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "thumbnail": {
+                        "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/thumbnail",
+                        "type": "object",
+                        "title": "The Thumbnail Schema",
+                        "required": [
+                          "tiny",
+                          "small",
+                          "medium",
+                          "large",
+                          "original"
+                        ],
+                        "properties": {
+                          "tiny": {
+                            "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/thumbnail/properties/tiny",
+                            "type": "string",
+                            "title": "The Tiny Schema",
+                            "default": "",
+                            "examples": [
+                              "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "small": {
+                            "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/thumbnail/properties/small",
+                            "type": "string",
+                            "title": "The Small Schema",
+                            "default": "",
+                            "examples": [
+                              "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "medium": {
+                            "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/thumbnail/properties/medium",
+                            "type": "string",
+                            "title": "The Medium Schema",
+                            "default": "",
+                            "examples": [
+                              "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "large": {
+                            "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/thumbnail/properties/large",
+                            "type": "string",
+                            "title": "The Large Schema",
+                            "default": "",
+                            "examples": [
+                              "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "original": {
+                            "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/metadata/properties/thumbnail/properties/original",
+                            "type": "string",
+                            "title": "The Original Schema",
+                            "default": "",
+                            "examples": [
+                              "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "signature": {
+                    "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/ratingSignatures/items/properties/signature",
+                    "type": "string",
+                    "title": "The Signature Schema",
+                    "default": "",
+                    "examples": [
+                      "KZXUbGEOKo/e8+ueE3QcRNKUGf+ak533qB45IO/SCz5gNKFf12BElh8HvDLQyX/7vrc5nnN6D2OVj3IMu260AA=="
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            },
+            "bigRequestedAmount": {
+              "$id": "#/properties/contract/properties/vendorOrderConfirmation/properties/bigRequestedAmount",
+              "type": "string",
+              "title": "The Bigrequestedamount Schema",
+              "default": "",
+              "examples": [
+                "3559244"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "vendorOrderFulfillment": {
+          "$id": "#/properties/contract/properties/vendorOrderFulfillment",
+          "type": "array",
+          "title": "The Vendororderfulfillment Schema",
+          "items": {
+            "$id": "#/properties/contract/properties/vendorOrderFulfillment/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "orderId",
+              "slug",
+              "timestamp",
+              "physicalDelivery",
+              "payout",
+              "ratingSignature",
+              "note"
+            ],
+            "properties": {
+              "orderId": {
+                "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/orderId",
+                "type": "string",
+                "title": "The Orderid Schema",
+                "default": "",
+                "examples": [
+                  "QmfYUVq8puk64Vc7FjDv4dE7XHGotJtij9yF6jejLnmrjg"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "slug": {
+                "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/slug",
+                "type": "string",
+                "title": "The Slug Schema",
+                "default": "",
+                "examples": [
+                  "eth-physical-order-testing-w-options"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "timestamp": {
+                "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/timestamp",
+                "type": "string",
+                "title": "The Timestamp Schema",
+                "default": "",
+                "examples": [
+                  "2019-10-02T02:05:40.241426Z"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "physicalDelivery": {
+                "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/physicalDelivery",
+                "type": "array",
+                "title": "The Physicaldelivery Schema",
+                "items": {
+                  "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/physicalDelivery/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "shipper",
+                    "trackingNumber"
+                  ],
+                  "properties": {
+                    "shipper": {
+                      "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/physicalDelivery/items/properties/shipper",
+                      "type": "string",
+                      "title": "The Shipper Schema",
+                      "default": "",
+                      "examples": [
+                        "UPS"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "trackingNumber": {
+                      "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/physicalDelivery/items/properties/trackingNumber",
+                      "type": "string",
+                      "title": "The Trackingnumber Schema",
+                      "default": "",
+                      "examples": [
+                        "1Z204E380338943508"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              },
+              "payout": {
+                "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout",
+                "type": "object",
+                "title": "The Payout Schema",
+                "required": [
+                  "sigs",
+                  "payoutAddress",
+                  "payoutFeePerByte",
+                  "bigPayoutFeePerByte"
+                ],
+                "properties": {
+                  "sigs": {
+                    "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout/properties/sigs",
+                    "type": "array",
+                    "title": "The Sigs Schema",
+                    "items": {
+                      "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout/properties/sigs/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "inputIndex",
+                        "signature"
+                      ],
+                      "properties": {
+                        "inputIndex": {
+                          "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout/properties/sigs/items/properties/inputIndex",
+                          "type": "integer",
+                          "title": "The Inputindex Schema",
+                          "default": 0,
+                          "examples": [
+                            0
+                          ]
+                        },
+                        "signature": {
+                          "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout/properties/sigs/items/properties/signature",
+                          "type": "string",
+                          "title": "The Signature Schema",
+                          "default": "",
+                          "examples": [
+                            "MEUCIQC8xuSaRlQ6p6YkcUkJx9oG1dRhcJAgY2gPRrXfJFgB3wIgCsNgdlHZwrIkH9DWjBys8E+VgkoiXlMOxVWejL7eDfcB"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  },
+                  "payoutAddress": {
+                    "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout/properties/payoutAddress",
+                    "type": "string",
+                    "title": "The Payoutaddress Schema",
+                    "default": "",
+                    "examples": [
+                      "mgSz1cFa93mCTk4pGRizG8fhvtghe5fumD"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "payoutFeePerByte": {
+                    "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout/properties/payoutFeePerByte",
+                    "type": "integer",
+                    "title": "The Payoutfeeperbyte Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "bigPayoutFeePerByte": {
+                    "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/payout/properties/bigPayoutFeePerByte",
+                    "type": "string",
+                    "title": "The Bigpayoutfeeperbyte Schema",
+                    "default": "",
+                    "examples": [
+                      "78"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "ratingSignature": {
+                "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature",
+                "type": "object",
+                "title": "The Ratingsignature Schema",
+                "required": [
+                  "metadata",
+                  "signature"
+                ],
+                "properties": {
+                  "metadata": {
+                    "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata",
+                    "type": "object",
+                    "title": "The Metadata Schema",
+                    "required": [
+                      "listingSlug",
+                      "ratingKey",
+                      "listingTitle",
+                      "thumbnail"
+                    ],
+                    "properties": {
+                      "listingSlug": {
+                        "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/listingSlug",
+                        "type": "string",
+                        "title": "The Listingslug Schema",
+                        "default": "",
+                        "examples": [
+                          "eth-physical-order-testing-w-options"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "ratingKey": {
+                        "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/ratingKey",
+                        "type": "string",
+                        "title": "The Ratingkey Schema",
+                        "default": "",
+                        "examples": [
+                          "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "listingTitle": {
+                        "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/listingTitle",
+                        "type": "string",
+                        "title": "The Listingtitle Schema",
+                        "default": "",
+                        "examples": [
+                          "ETH physical order testing w/ options"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "thumbnail": {
+                        "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/thumbnail",
+                        "type": "object",
+                        "title": "The Thumbnail Schema",
+                        "required": [
+                          "tiny",
+                          "small",
+                          "medium",
+                          "large",
+                          "original"
+                        ],
+                        "properties": {
+                          "tiny": {
+                            "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/thumbnail/properties/tiny",
+                            "type": "string",
+                            "title": "The Tiny Schema",
+                            "default": "",
+                            "examples": [
+                              "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "small": {
+                            "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/thumbnail/properties/small",
+                            "type": "string",
+                            "title": "The Small Schema",
+                            "default": "",
+                            "examples": [
+                              "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "medium": {
+                            "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/thumbnail/properties/medium",
+                            "type": "string",
+                            "title": "The Medium Schema",
+                            "default": "",
+                            "examples": [
+                              "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "large": {
+                            "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/thumbnail/properties/large",
+                            "type": "string",
+                            "title": "The Large Schema",
+                            "default": "",
+                            "examples": [
+                              "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "original": {
+                            "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/metadata/properties/thumbnail/properties/original",
+                            "type": "string",
+                            "title": "The Original Schema",
+                            "default": "",
+                            "examples": [
+                              "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "signature": {
+                    "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/ratingSignature/properties/signature",
+                    "type": "string",
+                    "title": "The Signature Schema",
+                    "default": "",
+                    "examples": [
+                      "0YeXRrRpYga02xol3milH/cs8r2R66d++MzgFu4h+NvFaycjnGsoFNByPCBGrK9zh5dOa2uQDZswpvBRQbKzAw=="
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "note": {
+                "$id": "#/properties/contract/properties/vendorOrderFulfillment/items/properties/note",
+                "type": "string",
+                "title": "The Note Schema",
+                "default": "",
+                "examples": [
+                  ""
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "signatures": {
+          "$id": "#/properties/contract/properties/signatures",
+          "type": "array",
+          "title": "The Signatures Schema",
+          "items": {
+            "$id": "#/properties/contract/properties/signatures/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "section",
+              "signatureBytes"
+            ],
+            "properties": {
+              "section": {
+                "$id": "#/properties/contract/properties/signatures/items/properties/section",
+                "type": "string",
+                "title": "The Section Schema",
+                "default": "",
+                "examples": [
+                  "LISTING"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "signatureBytes": {
+                "$id": "#/properties/contract/properties/signatures/items/properties/signatureBytes",
+                "type": "string",
+                "title": "The Signaturebytes Schema",
+                "default": "",
+                "examples": [
+                  "2n03BKKZoI80QxMXyTCn+LcibMYm5r43vcNnBg3wv66P5M/HNdTmAr6lbZecQum7CjQDy9sanTeimJn3ebbkCg=="
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "state": {
+      "$id": "#/properties/state",
+      "type": "string",
+      "title": "The State Schema",
+      "default": "",
+      "examples": [
+        "FULFILLED"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "read": {
+      "$id": "#/properties/read",
+      "type": "boolean",
+      "title": "The Read Schema",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "funded": {
+      "$id": "#/properties/funded",
+      "type": "boolean",
+      "title": "The Funded Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "unreadChatMessages": {
+      "$id": "#/properties/unreadChatMessages",
+      "type": "integer",
+      "title": "The Unreadchatmessages Schema",
+      "default": 0,
+      "examples": [
+        0
+      ]
+    },
+    "paymentAddressTransactions": {
+      "$id": "#/properties/paymentAddressTransactions",
+      "type": "array",
+      "title": "The Paymentaddresstransactions Schema",
+      "items": {
+        "$id": "#/properties/paymentAddressTransactions/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "txid",
+          "value",
+          "confirmations",
+          "height",
+          "timestamp",
+          "currency",
+          "bigValue"
+        ],
+        "properties": {
+          "txid": {
+            "$id": "#/properties/paymentAddressTransactions/items/properties/txid",
+            "type": "string",
+            "title": "The Txid Schema",
+            "default": "",
+            "examples": [
+              "e0e7650e33d719742d4dad52c9f294ad069e98885ab9eb4cb49095ac0f311a89"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "value": {
+            "$id": "#/properties/paymentAddressTransactions/items/properties/value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "confirmations": {
+            "$id": "#/properties/paymentAddressTransactions/items/properties/confirmations",
+            "type": "integer",
+            "title": "The Confirmations Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "height": {
+            "$id": "#/properties/paymentAddressTransactions/items/properties/height",
+            "type": "integer",
+            "title": "The Height Schema",
+            "default": 0,
+            "examples": [
+              1207456
+            ]
+          },
+          "timestamp": {
+            "$id": "#/properties/paymentAddressTransactions/items/properties/timestamp",
+            "type": "string",
+            "title": "The Timestamp Schema",
+            "default": "",
+            "examples": [
+              "2019-10-02T02:01:26.971737Z"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "currency": {
+            "$id": "#/properties/paymentAddressTransactions/items/properties/currency",
+            "type": "object",
+            "title": "The Currency Schema",
+            "required": [
+              "code",
+              "divisibility"
+            ],
+            "properties": {
+              "code": {
+                "$id": "#/properties/paymentAddressTransactions/items/properties/currency/properties/code",
+                "type": "string",
+                "title": "The Code Schema",
+                "default": "",
+                "examples": [
+                  "TLTC"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "divisibility": {
+                "$id": "#/properties/paymentAddressTransactions/items/properties/currency/properties/divisibility",
+                "type": "integer",
+                "title": "The Divisibility Schema",
+                "default": 0,
+                "examples": [
+                  8
+                ]
+              }
+            }
+          },
+          "bigValue": {
+            "$id": "#/properties/paymentAddressTransactions/items/properties/bigValue",
+            "type": "string",
+            "title": "The Bigvalue Schema",
+            "default": "",
+            "examples": [
+              "3559244"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
