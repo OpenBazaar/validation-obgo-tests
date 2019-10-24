@@ -442,6 +442,66 @@
         "note": ""
       }
     ],
+    "buyerOrderCompletion": {
+      "orderId": "QmfYUVq8puk64Vc7FjDv4dE7XHGotJtij9yF6jejLnmrjg",
+      "timestamp": "2019-10-02T02:07:21.650473Z",
+      "payoutSigs": [
+        {
+          "inputIndex": 0,
+          "signature": "MEUCIQDmltMdO60f54Xvtzr4h1iOuIaDi6Zh7bBqre4qB+0vjgIgZ8RnfEjZ6xt0ZKShDLvB0VJRzOZGqEwR/wjovSa7aXMB"
+        }
+      ],
+      "ratings": [
+        {
+          "ratingData": {
+            "ratingKey": "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP",
+            "vendorID": {
+              "peerID": "QmRGCvxohRX7NtAHJ2vziW6DTitCDJxSsJ3QG7GsJeLgpi",
+              "handle": "",
+              "pubkeys": {
+                "identity": "CAESIIGUD8yv0SatWnhIJfmwu+a+BLVJUwH9Ogd24o1IIqh+",
+                "bitcoin": "A9P3boODWa2rCqxS4GUsV7L/2g3Q1SAXtfYprfFWacTi"
+              },
+              "bitcoinSig": "MEUCIQDhQYRHTwaAb0NrCg59Dme7TBeQTeB+lkyaflV95OOD4QIgPdW++LHapAwciVXWHX6wSlbmCNuczuYAqHv/Dy15c2k="
+            },
+            "vendorSig": {
+              "metadata": {
+                "listingSlug": "eth-physical-order-testing-w-options",
+                "ratingKey": "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP",
+                "listingTitle": "ETH physical order testing w/ options",
+                "thumbnail": {
+                  "tiny": "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz",
+                  "small": "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9",
+                  "medium": "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF",
+                  "large": "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h",
+                  "original": "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                }
+              },
+              "signature": "0YeXRrRpYga02xol3milH/cs8r2R66d++MzgFu4h+NvFaycjnGsoFNByPCBGrK9zh5dOa2uQDZswpvBRQbKzAw=="
+            },
+            "buyerID": {
+              "peerID": "QmW1fE8BeHQGup7gaNLXx2gM1JP27fyxCaHZDoor5F5WGF",
+              "handle": "",
+              "pubkeys": {
+                "identity": "CAESIIcwMkUGnYEFYn75Ed6hjAX0spCWYqBPCAktzXQSByhD",
+                "bitcoin": "AvXo2c7QIOUpZPBHMDx4KzNh8Rm0wiafjYkz5UXFTQ5k"
+              },
+              "bitcoinSig": "MEQCIBHIg8KMIgwxp2eUEquft0/RZvE+U0OQKaFa+njI7z5LAiAkhxzKz+lGq9+L8vR060aCRdQbspJwl5GKTE9EM3MPqw=="
+            },
+            "buyerName": "update-listing BUYER",
+            "buyerSig": "N6ZiIcBxhyTxQq7i3z0wn11HXqzZDhex8ZAkXBAbbfOU5boTg+jEqwb606fJAnxjkeuZ4gAfrdfX3FO9ghA+Aw==",
+            "timestamp": "2019-10-02T02:07:21.650849Z",
+            "overall": 5,
+            "quality": 5,
+            "description": 5,
+            "deliverySpeed": 5,
+            "customerService": 5,
+            "review": "This rocks!"
+          },
+          "signature": "MEUCIQDyA+ln5q90R+dpYpEa8Gn/4HkocmGc2HZlPesonmiaQgIgeDcgj2oQWyVnHMXPILZ0RMqvmTxoBysMV37U8IkvNAg="
+        }
+      ]
+    },
     "signatures": [
       {
         "section": "LISTING",
@@ -458,10 +518,14 @@
       {
         "section": "ORDER_FULFILLMENT",
         "signatureBytes": "GdWYgUpNwE2AKthxqGVb8qum56JyUfNJD0P7tg08xgSlQewBLAWz69Cei6pEpjWYKEBEC4X4DrosNeX31ZJhBw=="
+      },
+      {
+        "section": "ORDER_COMPLETION",
+        "signatureBytes": "2a+Yb+rTaOHfy3iK5fswsZqjSlj96nVPQ994dxNVLwSTcPZ53OI37D2nXncY/cwn1+uATvtZRVyeJiuCaTiODA=="
       }
     ]
   },
-  "state": "FULFILLED",
+  "state": "COMPLETED",
   "read": false,
   "funded": true,
   "unreadChatMessages": 0,
@@ -477,6 +541,18 @@
         "divisibility": 8
       },
       "bigValue": "3559244"
+    },
+    {
+      "txid": "4135bfd5e57218c49e19f32888626798925a9465fd8c103a8b1d2c3fd5931076",
+      "value": 0,
+      "confirmations": 0,
+      "height": 0,
+      "timestamp": "2019-10-02T02:07:22.675314Z",
+      "currency": {
+        "code": "TLTC",
+        "divisibility": 8
+      },
+      "bigValue": "-3559244"
     }
   ]
 }

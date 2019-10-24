@@ -300,6 +300,17 @@ Presently, our QA tests are focused on order flows, which means that the followi
 - [x] GET /ob/listing/ipfs/:listingHash
 - [x] GET /ob/listing/ipfs/slug
 - [ ] GET /ob/order
+  - [ ] Direct, Online, COMPLETE (DiOnCom)
+  - [ ] Direct, Online, REFUNDED (DiOnRef)
+  - [ ] Direct, Offline, COMPLETE (DiOffCom)
+  - [ ] Direct, Offline, DECLINED (DiOffDec)
+  - [ ] Direct, Offline, CANCELED (DiOffCan)
+  - [ ] Moderated, Online, COMPLETE (ModOnCom)
+  - [ ] Moderated, Online, RESOLVED (ModOnRes)
+  - [ ] Moderated, Online, REFUNDED (ModOnRef)
+  - [ ] Moderated, Offline, COMPLETE (ModOffCom)
+  - [ ] Moderated, Offline, RESOLVED (ModOffRes)
+  - [ ] Moderated, Offline, REFUNDED (ModOffRef)
 - [x] GET /ob/purchases
 - [x] GET /ob/sales
 - [x] GET /wallet/balance/:coinType

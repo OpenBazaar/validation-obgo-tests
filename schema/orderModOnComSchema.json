@@ -20,8 +20,6 @@
       "required": [
         "vendorListings",
         "buyerOrder",
-        "vendorOrderConfirmation",
-        "vendorOrderFulfillment",
         "signatures"
       ],
       "properties": {
@@ -277,8 +275,6 @@
                   "tags",
                   "images",
                   "categories",
-                  "options",
-                  "skus",
                   "priceModifier",
                   "bigPrice",
                   "priceCurrency"
@@ -862,7 +858,10 @@
                   "title": "The Items Schema",
                   "required": [
                     "title",
-                    "hash"
+                    "hash",
+                    "percentDiscount",
+                    "priceDiscount",
+                    "bigPriceDiscount"
                   ],
                   "properties": {
                     "title": {
@@ -1173,6 +1172,7 @@
                   "shippingOption",
                   "memo",
                   "paymentAddress",
+                  "quantity64",
                   "bigQuantity"
                 ],
                 "properties": {
@@ -1987,6 +1987,493 @@
             }
           }
         },
+        "buyerOrderCompletion": {
+          "$id": "#/properties/contract/properties/buyerOrderCompletion",
+          "type": "object",
+          "title": "The Buyerordercompletion Schema",
+          "required": [
+            "orderId",
+            "timestamp",
+            "payoutSigs",
+            "ratings"
+          ],
+          "properties": {
+            "orderId": {
+              "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/orderId",
+              "type": "string",
+              "title": "The Orderid Schema",
+              "default": "",
+              "examples": [
+                "QmfYUVq8puk64Vc7FjDv4dE7XHGotJtij9yF6jejLnmrjg"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "timestamp": {
+              "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/timestamp",
+              "type": "string",
+              "title": "The Timestamp Schema",
+              "default": "",
+              "examples": [
+                "2019-10-02T02:07:21.650473Z"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "payoutSigs": {
+              "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/payoutSigs",
+              "type": "array",
+              "title": "The Payoutsigs Schema",
+              "items": {
+                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/payoutSigs/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "inputIndex",
+                  "signature"
+                ],
+                "properties": {
+                  "inputIndex": {
+                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/payoutSigs/items/properties/inputIndex",
+                    "type": "integer",
+                    "title": "The Inputindex Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "signature": {
+                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/payoutSigs/items/properties/signature",
+                    "type": "string",
+                    "title": "The Signature Schema",
+                    "default": "",
+                    "examples": [
+                      "MEUCIQDmltMdO60f54Xvtzr4h1iOuIaDi6Zh7bBqre4qB+0vjgIgZ8RnfEjZ6xt0ZKShDLvB0VJRzOZGqEwR/wjovSa7aXMB"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            },
+            "ratings": {
+              "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings",
+              "type": "array",
+              "title": "The Ratings Schema",
+              "items": {
+                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "ratingData",
+                  "signature"
+                ],
+                "properties": {
+                  "ratingData": {
+                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData",
+                    "type": "object",
+                    "title": "The Ratingdata Schema",
+                    "required": [
+                      "ratingKey",
+                      "vendorID",
+                      "vendorSig",
+                      "buyerID",
+                      "buyerName",
+                      "buyerSig",
+                      "timestamp",
+                      "overall",
+                      "quality",
+                      "description",
+                      "deliverySpeed",
+                      "customerService",
+                      "review"
+                    ],
+                    "properties": {
+                      "ratingKey": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/ratingKey",
+                        "type": "string",
+                        "title": "The Ratingkey Schema",
+                        "default": "",
+                        "examples": [
+                          "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "vendorID": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorID",
+                        "type": "object",
+                        "title": "The Vendorid Schema",
+                        "required": [
+                          "peerID",
+                          "handle",
+                          "pubkeys",
+                          "bitcoinSig"
+                        ],
+                        "properties": {
+                          "peerID": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorID/properties/peerID",
+                            "type": "string",
+                            "title": "The Peerid Schema",
+                            "default": "",
+                            "examples": [
+                              "QmRGCvxohRX7NtAHJ2vziW6DTitCDJxSsJ3QG7GsJeLgpi"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "handle": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorID/properties/handle",
+                            "type": "string",
+                            "title": "The Handle Schema",
+                            "default": "",
+                            "examples": [
+                              ""
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "pubkeys": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorID/properties/pubkeys",
+                            "type": "object",
+                            "title": "The Pubkeys Schema",
+                            "required": [
+                              "identity",
+                              "bitcoin"
+                            ],
+                            "properties": {
+                              "identity": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorID/properties/pubkeys/properties/identity",
+                                "type": "string",
+                                "title": "The Identity Schema",
+                                "default": "",
+                                "examples": [
+                                  "CAESIIGUD8yv0SatWnhIJfmwu+a+BLVJUwH9Ogd24o1IIqh+"
+                                ],
+                                "pattern": "^(.*)$"
+                              },
+                              "bitcoin": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorID/properties/pubkeys/properties/bitcoin",
+                                "type": "string",
+                                "title": "The Bitcoin Schema",
+                                "default": "",
+                                "examples": [
+                                  "A9P3boODWa2rCqxS4GUsV7L/2g3Q1SAXtfYprfFWacTi"
+                                ],
+                                "pattern": "^(.*)$"
+                              }
+                            }
+                          },
+                          "bitcoinSig": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorID/properties/bitcoinSig",
+                            "type": "string",
+                            "title": "The Bitcoinsig Schema",
+                            "default": "",
+                            "examples": [
+                              "MEUCIQDhQYRHTwaAb0NrCg59Dme7TBeQTeB+lkyaflV95OOD4QIgPdW++LHapAwciVXWHX6wSlbmCNuczuYAqHv/Dy15c2k="
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      },
+                      "vendorSig": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig",
+                        "type": "object",
+                        "title": "The Vendorsig Schema",
+                        "required": [
+                          "metadata",
+                          "signature"
+                        ],
+                        "properties": {
+                          "metadata": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata",
+                            "type": "object",
+                            "title": "The Metadata Schema",
+                            "required": [
+                              "listingSlug",
+                              "ratingKey",
+                              "listingTitle",
+                              "thumbnail"
+                            ],
+                            "properties": {
+                              "listingSlug": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/listingSlug",
+                                "type": "string",
+                                "title": "The Listingslug Schema",
+                                "default": "",
+                                "examples": [
+                                  "eth-physical-order-testing-w-options"
+                                ],
+                                "pattern": "^(.*)$"
+                              },
+                              "ratingKey": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/ratingKey",
+                                "type": "string",
+                                "title": "The Ratingkey Schema",
+                                "default": "",
+                                "examples": [
+                                  "Aic5cISvUbareCiucRtAHh9k+DEKnU8Knb2u8T25E3xP"
+                                ],
+                                "pattern": "^(.*)$"
+                              },
+                              "listingTitle": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/listingTitle",
+                                "type": "string",
+                                "title": "The Listingtitle Schema",
+                                "default": "",
+                                "examples": [
+                                  "ETH physical order testing w/ options"
+                                ],
+                                "pattern": "^(.*)$"
+                              },
+                              "thumbnail": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/thumbnail",
+                                "type": "object",
+                                "title": "The Thumbnail Schema",
+                                "required": [
+                                  "tiny",
+                                  "small",
+                                  "medium",
+                                  "large",
+                                  "original"
+                                ],
+                                "properties": {
+                                  "tiny": {
+                                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/thumbnail/properties/tiny",
+                                    "type": "string",
+                                    "title": "The Tiny Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "small": {
+                                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/thumbnail/properties/small",
+                                    "type": "string",
+                                    "title": "The Small Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "medium": {
+                                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/thumbnail/properties/medium",
+                                    "type": "string",
+                                    "title": "The Medium Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "large": {
+                                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/thumbnail/properties/large",
+                                    "type": "string",
+                                    "title": "The Large Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmfTKL3Z67mWKTKf9XKSCj1ptmDRaZLr5yjPS4JrVDgo5h"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  },
+                                  "original": {
+                                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/metadata/properties/thumbnail/properties/original",
+                                    "type": "string",
+                                    "title": "The Original Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "QmNexx7SaJCVCjyGGG3j2k7fenn3iVhtWdm9RvKvT7GTLq"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "signature": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/vendorSig/properties/signature",
+                            "type": "string",
+                            "title": "The Signature Schema",
+                            "default": "",
+                            "examples": [
+                              "0YeXRrRpYga02xol3milH/cs8r2R66d++MzgFu4h+NvFaycjnGsoFNByPCBGrK9zh5dOa2uQDZswpvBRQbKzAw=="
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      },
+                      "buyerID": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerID",
+                        "type": "object",
+                        "title": "The Buyerid Schema",
+                        "required": [
+                          "peerID",
+                          "handle",
+                          "pubkeys",
+                          "bitcoinSig"
+                        ],
+                        "properties": {
+                          "peerID": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerID/properties/peerID",
+                            "type": "string",
+                            "title": "The Peerid Schema",
+                            "default": "",
+                            "examples": [
+                              "QmW1fE8BeHQGup7gaNLXx2gM1JP27fyxCaHZDoor5F5WGF"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "handle": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerID/properties/handle",
+                            "type": "string",
+                            "title": "The Handle Schema",
+                            "default": "",
+                            "examples": [
+                              ""
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "pubkeys": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerID/properties/pubkeys",
+                            "type": "object",
+                            "title": "The Pubkeys Schema",
+                            "required": [
+                              "identity",
+                              "bitcoin"
+                            ],
+                            "properties": {
+                              "identity": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerID/properties/pubkeys/properties/identity",
+                                "type": "string",
+                                "title": "The Identity Schema",
+                                "default": "",
+                                "examples": [
+                                  "CAESIIcwMkUGnYEFYn75Ed6hjAX0spCWYqBPCAktzXQSByhD"
+                                ],
+                                "pattern": "^(.*)$"
+                              },
+                              "bitcoin": {
+                                "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerID/properties/pubkeys/properties/bitcoin",
+                                "type": "string",
+                                "title": "The Bitcoin Schema",
+                                "default": "",
+                                "examples": [
+                                  "AvXo2c7QIOUpZPBHMDx4KzNh8Rm0wiafjYkz5UXFTQ5k"
+                                ],
+                                "pattern": "^(.*)$"
+                              }
+                            }
+                          },
+                          "bitcoinSig": {
+                            "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerID/properties/bitcoinSig",
+                            "type": "string",
+                            "title": "The Bitcoinsig Schema",
+                            "default": "",
+                            "examples": [
+                              "MEQCIBHIg8KMIgwxp2eUEquft0/RZvE+U0OQKaFa+njI7z5LAiAkhxzKz+lGq9+L8vR060aCRdQbspJwl5GKTE9EM3MPqw=="
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      },
+                      "buyerName": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerName",
+                        "type": "string",
+                        "title": "The Buyername Schema",
+                        "default": "",
+                        "examples": [
+                          "update-listing BUYER"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "buyerSig": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/buyerSig",
+                        "type": "string",
+                        "title": "The Buyersig Schema",
+                        "default": "",
+                        "examples": [
+                          "N6ZiIcBxhyTxQq7i3z0wn11HXqzZDhex8ZAkXBAbbfOU5boTg+jEqwb606fJAnxjkeuZ4gAfrdfX3FO9ghA+Aw=="
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "timestamp": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/timestamp",
+                        "type": "string",
+                        "title": "The Timestamp Schema",
+                        "default": "",
+                        "examples": [
+                          "2019-10-02T02:07:21.650849Z"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "overall": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/overall",
+                        "type": "integer",
+                        "title": "The Overall Schema",
+                        "default": 0,
+                        "examples": [
+                          5
+                        ]
+                      },
+                      "quality": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/quality",
+                        "type": "integer",
+                        "title": "The Quality Schema",
+                        "default": 0,
+                        "examples": [
+                          5
+                        ]
+                      },
+                      "description": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/description",
+                        "type": "integer",
+                        "title": "The Description Schema",
+                        "default": 0,
+                        "examples": [
+                          5
+                        ]
+                      },
+                      "deliverySpeed": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/deliverySpeed",
+                        "type": "integer",
+                        "title": "The Deliveryspeed Schema",
+                        "default": 0,
+                        "examples": [
+                          5
+                        ]
+                      },
+                      "customerService": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/customerService",
+                        "type": "integer",
+                        "title": "The Customerservice Schema",
+                        "default": 0,
+                        "examples": [
+                          5
+                        ]
+                      },
+                      "review": {
+                        "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/ratingData/properties/review",
+                        "type": "string",
+                        "title": "The Review Schema",
+                        "default": "",
+                        "examples": [
+                          "This rocks!"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  },
+                  "signature": {
+                    "$id": "#/properties/contract/properties/buyerOrderCompletion/properties/ratings/items/properties/signature",
+                    "type": "string",
+                    "title": "The Signature Schema",
+                    "default": "",
+                    "examples": [
+                      "MEUCIQDyA+ln5q90R+dpYpEa8Gn/4HkocmGc2HZlPesonmiaQgIgeDcgj2oQWyVnHMXPILZ0RMqvmTxoBysMV37U8IkvNAg="
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          }
+        },
         "signatures": {
           "$id": "#/properties/contract/properties/signatures",
           "type": "array",
@@ -2031,7 +2518,7 @@
       "title": "The State Schema",
       "default": "",
       "examples": [
-        "FULFILLED"
+        "COMPLETED"
       ],
       "pattern": "^(.*)$"
     },
