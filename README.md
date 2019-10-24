@@ -305,7 +305,7 @@ Presently, our QA tests are focused on order flows, which means that the followi
   - [ ] Direct, Offline, COMPLETE (DiOffCom)
   - [ ] Direct, Offline, DECLINED (DiOffDec)
   - [ ] Direct, Offline, CANCELED (DiOffCan)
-  - [ ] Moderated, Online, COMPLETE (ModOnCom)
+  - [x] Moderated, Online, COMPLETE (ModOnCom)
   - [ ] Moderated, Online, RESOLVED (ModOnRes)
   - [ ] Moderated, Online, REFUNDED (ModOnRef)
   - [ ] Moderated, Offline, COMPLETE (ModOffCom)

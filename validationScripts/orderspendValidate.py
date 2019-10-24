@@ -1,10 +1,10 @@
 import jsonschema
 import json
 
-with open('../schema/orderspendSchema.json') as a:
+with open('../schema/orderSpendSchema.json') as a:
   schema = json.load(a)
 
-with open('../responses/orderspend.json') as b:
+with open('../responses/orderSpend.json') as b:
   response = json.load(b)
 
 try:
