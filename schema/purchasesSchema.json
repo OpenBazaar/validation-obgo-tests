@@ -1,0 +1,209 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "purchases",
+    "queryCount"
+  ],
+  "properties": {
+    "purchases": {
+      "$id": "#/properties/purchases",
+      "type": "array",
+      "title": "The Purchases Schema",
+      "items": {
+        "$id": "#/properties/purchases/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "coinType",
+          "moderated",
+          "orderId",
+          "paymentCoin",
+          "read",
+          "shippingAddress",
+          "shippingName",
+          "slug",
+          "state",
+          "thumbnail",
+          "timestamp",
+          "title",
+          "total",
+          "unreadChatMessages",
+          "vendorHandle",
+          "vendorId"
+        ],
+        "properties": {
+          "coinType": {
+            "$id": "#/properties/purchases/items/properties/coinType",
+            "type": "string",
+            "title": "The Cointype Schema",
+            "default": "",
+            "examples": [
+              "USD"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "moderated": {
+            "$id": "#/properties/purchases/items/properties/moderated",
+            "type": "boolean",
+            "title": "The Moderated Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "orderId": {
+            "$id": "#/properties/purchases/items/properties/orderId",
+            "type": "string",
+            "title": "The Orderid Schema",
+            "default": "",
+            "examples": [
+              "QmRMHSgABCEdajpDAckTfZCZsgJoi2KMoTWt2M1SvsUUy6"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "paymentCoin": {
+            "$id": "#/properties/purchases/items/properties/paymentCoin",
+            "type": "string",
+            "title": "The Paymentcoin Schema",
+            "default": "",
+            "examples": [
+              "LTC"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "read": {
+            "$id": "#/properties/purchases/items/properties/read",
+            "type": "boolean",
+            "title": "The Read Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "shippingAddress": {
+            "$id": "#/properties/purchases/items/properties/shippingAddress",
+            "type": "string",
+            "title": "The Shippingaddress Schema",
+            "default": "",
+            "examples": [
+              "31 Spooner Street Apt. 124"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "shippingName": {
+            "$id": "#/properties/purchases/items/properties/shippingName",
+            "type": "string",
+            "title": "The Shippingname Schema",
+            "default": "",
+            "examples": [
+              "Seymour Butts"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "slug": {
+            "$id": "#/properties/purchases/items/properties/slug",
+            "type": "string",
+            "title": "The Slug Schema",
+            "default": "",
+            "examples": [
+              "cu"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "state": {
+            "$id": "#/properties/purchases/items/properties/state",
+            "type": "string",
+            "title": "The State Schema",
+            "default": "",
+            "examples": [
+              "DISPUTED"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "thumbnail": {
+            "$id": "#/properties/purchases/items/properties/thumbnail",
+            "type": "string",
+            "title": "The Thumbnail Schema",
+            "default": "",
+            "examples": [
+              "QmVMBS1DK2KHKhnjwE7iAHb6jUg3NbGz8mQqjNZKQvo4rx"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "timestamp": {
+            "$id": "#/properties/purchases/items/properties/timestamp",
+            "type": "string",
+            "title": "The Timestamp Schema",
+            "default": "",
+            "examples": [
+              "2019-10-17T19:47:56Z"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "title": {
+            "$id": "#/properties/purchases/items/properties/title",
+            "type": "string",
+            "title": "The Title Schema",
+            "default": "",
+            "examples": [
+              "Cu"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "total": {
+            "$id": "#/properties/purchases/items/properties/total",
+            "type": "string",
+            "title": "The Total Schema",
+            "default": "",
+            "examples": [
+              "933981"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "unreadChatMessages": {
+            "$id": "#/properties/purchases/items/properties/unreadChatMessages",
+            "type": "integer",
+            "title": "The Unreadchatmessages Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "vendorHandle": {
+            "$id": "#/properties/purchases/items/properties/vendorHandle",
+            "type": "string",
+            "title": "The Vendorhandle Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "vendorId": {
+            "$id": "#/properties/purchases/items/properties/vendorId",
+            "type": "string",
+            "title": "The Vendorid Schema",
+            "default": "",
+            "examples": [
+              "QmSCuUVZ13VveooP2Lp2zdrznHe9BrgshSKo3hRT5KmLHY"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "queryCount": {
+      "$id": "#/properties/queryCount",
+      "type": "integer",
+      "title": "The Querycount Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    }
+  }
+}

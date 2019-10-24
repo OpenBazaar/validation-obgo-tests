@@ -1,0 +1,141 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "amount",
+    "confirmedBalance",
+    "currency",
+    "memo",
+    "orderId",
+    "timestamp",
+    "txid",
+    "unconfirmedBalance"
+  ],
+  "properties": {
+    "amount": {
+      "$id": "#/properties/amount",
+      "type": "string",
+      "title": "The Amount Schema",
+      "default": "",
+      "examples": [
+        "11279519441940000"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "confirmedBalance": {
+      "$id": "#/properties/confirmedBalance",
+      "type": "string",
+      "title": "The Confirmedbalance Schema",
+      "default": "",
+      "examples": [
+        "488305191558060000"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "currency": {
+      "$id": "#/properties/currency",
+      "type": "object",
+      "title": "The Currency Schema",
+      "required": [
+        "code",
+        "currencyType",
+        "divisibility",
+        "name"
+      ],
+      "properties": {
+        "code": {
+          "$id": "#/properties/currency/properties/code",
+          "type": "string",
+          "title": "The Code Schema",
+          "default": "",
+          "examples": [
+            "ETH"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "currencyType": {
+          "$id": "#/properties/currency/properties/currencyType",
+          "type": "string",
+          "title": "The Currencytype Schema",
+          "default": "",
+          "examples": [
+            "crypto"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "divisibility": {
+          "$id": "#/properties/currency/properties/divisibility",
+          "type": "integer",
+          "title": "The Divisibility Schema",
+          "default": 0,
+          "examples": [
+            18
+          ]
+        },
+        "name": {
+          "$id": "#/properties/currency/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Ethereum"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "memo": {
+      "$id": "#/properties/memo",
+      "type": "string",
+      "title": "The Memo Schema",
+      "default": "",
+      "examples": [
+        "ETH physical order testing w/ options"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "orderId": {
+      "$id": "#/properties/orderId",
+      "type": "string",
+      "title": "The Orderid Schema",
+      "default": "",
+      "examples": [
+        "QmNgwpWbccEJw3gRWDo5CSfa83B1fZqGCttLT32p8Khukv"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "timestamp": {
+      "$id": "#/properties/timestamp",
+      "type": "string",
+      "title": "The Timestamp Schema",
+      "default": "",
+      "examples": [
+        "2019-10-02T14:36:34.554347+10:00"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "txid": {
+      "$id": "#/properties/txid",
+      "type": "string",
+      "title": "The Txid Schema",
+      "default": "",
+      "examples": [
+        "7741d2c1e556f25b424e04c9c396aefeaae487ab40305e856e76f1d645094311"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "unconfirmedBalance": {
+      "$id": "#/properties/unconfirmedBalance",
+      "type": "string",
+      "title": "The Unconfirmedbalance Schema",
+      "default": "",
+      "examples": [
+        "0"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

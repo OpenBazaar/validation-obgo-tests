@@ -1,0 +1,22 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "address"
+  ],
+  "properties": {
+    "address": {
+      "$id": "#/properties/address",
+      "type": "string",
+      "title": "The Address Schema",
+      "default": "",
+      "examples": [
+        "0xeF8D3eB60624832d065c258d30CFED60068168B1"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

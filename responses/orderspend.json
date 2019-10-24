@@ -1,0 +1,15 @@
+{
+  "amount": "11279519441940000",
+  "confirmedBalance": "488305191558060000",
+  "currency": {
+    "code": "TETH",
+    "currencyType": "crypto",
+    "divisibility": 18,
+    "name": "Testnet Ethereum"
+  },
+  "memo": "ETH physical order testing w/ options",
+  "orderId": "QmNgwpWbccEJw3gRWDo5CSfa83B1fZqGCttLT32p8Khukv",
+  "timestamp": "2019-10-02T14:36:34.554347+10:00",
+  "txid": "7741d2c1e556f25b424e04c9c396aefeaae487ab40305e856e76f1d645094311",
+  "unconfirmedBalance": "0"
+}

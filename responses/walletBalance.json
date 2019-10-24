@@ -1,0 +1,11 @@
+{
+  "confirmed": "57600000000000",
+  "currency": {
+    "code": "ETH",
+    "currencyType": "crypto",
+    "divisibility": 18,
+    "name": "Ethereum"
+  },
+  "height": 8799758,
+  "unconfirmed": "0"
+}

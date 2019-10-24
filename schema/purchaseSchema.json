@@ -1,0 +1,117 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "amount",
+    "orderId",
+    "paymentAddress",
+    "vendorOnline"
+  ],
+  "properties": {
+    "amount": {
+      "$id": "#/properties/amount",
+      "type": "object",
+      "title": "The Amount Schema",
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "properties": {
+        "amount": {
+          "$id": "#/properties/amount/properties/amount",
+          "type": "string",
+          "title": "The Amount Schema",
+          "default": "",
+          "examples": [
+            "11279519441940000"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "currency": {
+          "$id": "#/properties/amount/properties/currency",
+          "type": "object",
+          "title": "The Currency Schema",
+          "required": [
+            "code",
+            "currencyType",
+            "divisibility",
+            "name"
+          ],
+          "properties": {
+            "code": {
+              "$id": "#/properties/amount/properties/currency/properties/code",
+              "type": "string",
+              "title": "The Code Schema",
+              "default": "",
+              "examples": [
+                "ETH"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "currencyType": {
+              "$id": "#/properties/amount/properties/currency/properties/currencyType",
+              "type": "string",
+              "title": "The Currencytype Schema",
+              "default": "",
+              "examples": [
+                "crypto"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "divisibility": {
+              "$id": "#/properties/amount/properties/currency/properties/divisibility",
+              "type": "integer",
+              "title": "The Divisibility Schema",
+              "default": 0,
+              "examples": [
+                18
+              ]
+            },
+            "name": {
+              "$id": "#/properties/amount/properties/currency/properties/name",
+              "type": "string",
+              "title": "The Name Schema",
+              "default": "",
+              "examples": [
+                "Ethereum"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "orderId": {
+      "$id": "#/properties/orderId",
+      "type": "string",
+      "title": "The Orderid Schema",
+      "default": "",
+      "examples": [
+        "QmNgwpWbccEJw3gRWDo5CSfa83B1fZqGCttLT32p8Khukv"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "paymentAddress": {
+      "$id": "#/properties/paymentAddress",
+      "type": "string",
+      "title": "The Paymentaddress Schema",
+      "default": "",
+      "examples": [
+        "0x0A9e32DB49768c7b8196e77A6673EB5C813a9B8D"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "vendorOnline": {
+      "$id": "#/properties/vendorOnline",
+      "type": "boolean",
+      "title": "The Vendoronline Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    }
+  }
+}

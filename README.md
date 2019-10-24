@@ -296,19 +296,19 @@ Presently, our QA tests are focused on order flows, which means that the followi
 - [x] GET /ob/profile
 - [ ] GET /ob/cases
 - [ ] GET /ob/case
-- [ ] POST /ob/releasefunds
-- [ ] GET /ob/listings
+- [x] GET /ob/listings
 - [x] GET /ob/listing/ipfs/:listingHash
 - [x] GET /ob/listing/ipfs/slug
 - [ ] GET /ob/order
-- [ ] GET /ob/purchases
-- [ ] GET /ob/sales
-- [ ] POST /ob/purchase
-- [ ] POST /wallet/spend
-- [ ] POST /ob/orderspend
+- [x] GET /ob/purchases
+- [x] GET /ob/sales
+- [x] GET /wallet/balance/:coinType
+- [x] GET /wallet/address/:coinType
+- [x] POST /ob/purchase
+- [x] POST /wallet/spend
+- [x] POST /ob/orderspend
+- [ ] POST /ob/releasefunds
 - [ ] POST /ob/releaseescrow
-- [ ] GET /wallet/balance/:coinType
-- [ ] GET /wallet/address/:coinType
 
 ### Known issues
 

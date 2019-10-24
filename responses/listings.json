@@ -1,0 +1,48 @@
+[
+  {
+    "acceptedCurrencies": [
+      "BTC",
+      "BCH",
+      "LTC",
+      "ZEC",
+      "ETH"
+    ],
+    "averageRating": 0,
+    "categories": [
+      "👚 Apparel &amp; Accessories"
+    ],
+    "coinType": "",
+    "contractType": "PHYSICAL_GOOD",
+    "description": "This is a listing example for testing orders.",
+    "freeShipping": [
+      "ALL"
+    ],
+    "hash": "QmePjhYGVWf6Gqqz1NeLTfi8MooHPixWpsSQMyv73imHom",
+    "language": "",
+    "moderators": [
+      "QmcdkKM2fWCKzTZdpjEY6abzRbDhRRJvNmqwNKVyiDtGky"
+    ],
+    "modifier": 0,
+    "nsfw": false,
+    "price": {
+      "amount": "100",
+      "currency": {
+        "code": "USD",
+        "currencyType": "fiat",
+        "divisibility": 2,
+        "name": "United States Dollar"
+      }
+    },
+    "ratingCount": 0,
+    "shipsTo": [
+      "ALL"
+    ],
+    "slug": "eth-physical-order-testing-w-options",
+    "thumbnail": {
+      "medium": "QmTJfeeapZwFM8EoZAuf16JsSJyxZtKaAR6hmWiMf4CTcF",
+      "small": "QmVsoT9iabv6GZhxhvtjSpQMJA6QyMivGTs6MmHJr6TBm9",
+      "tiny": "QmbjyAxYee4y3443kAMLcmRVwggZsRDKiyXnXus1qdJJWz"
+    },
+    "title": "ETH physical order testing w/ options"
+  }
+]

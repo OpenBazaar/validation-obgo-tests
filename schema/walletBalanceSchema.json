@@ -1,0 +1,96 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "confirmed",
+    "currency",
+    "height",
+    "unconfirmed"
+  ],
+  "properties": {
+    "confirmed": {
+      "$id": "#/properties/confirmed",
+      "type": "string",
+      "title": "The Confirmed Schema",
+      "default": "",
+      "examples": [
+        "57600000000000"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "currency": {
+      "$id": "#/properties/currency",
+      "type": "object",
+      "title": "The Currency Schema",
+      "required": [
+        "code",
+        "currencyType",
+        "divisibility",
+        "name"
+      ],
+      "properties": {
+        "code": {
+          "$id": "#/properties/currency/properties/code",
+          "type": "string",
+          "title": "The Code Schema",
+          "default": "",
+          "examples": [
+            "ETH"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "currencyType": {
+          "$id": "#/properties/currency/properties/currencyType",
+          "type": "string",
+          "title": "The Currencytype Schema",
+          "default": "",
+          "examples": [
+            "crypto"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "divisibility": {
+          "$id": "#/properties/currency/properties/divisibility",
+          "type": "integer",
+          "title": "The Divisibility Schema",
+          "default": 0,
+          "examples": [
+            18
+          ]
+        },
+        "name": {
+          "$id": "#/properties/currency/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Ethereum"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "height": {
+      "$id": "#/properties/height",
+      "type": "integer",
+      "title": "The Height Schema",
+      "default": 0,
+      "examples": [
+        8799758
+      ]
+    },
+    "unconfirmed": {
+      "$id": "#/properties/unconfirmed",
+      "type": "string",
+      "title": "The Unconfirmed Schema",
+      "default": "",
+      "examples": [
+        "0"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

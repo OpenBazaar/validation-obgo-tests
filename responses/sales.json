@@ -1,0 +1,23 @@
+{
+  "queryCount": 1,
+  "sales": [
+    {
+      "buyerHandle": "",
+      "buyerId": "QmXMT7kT4FD2s3u8z34ETMzJZSfy9nBn3q3E4VVg26UNPy",
+      "coinType": "USD",
+      "moderated": false,
+      "orderId": "QmbNHboEnuEEJmYWEpEuytVbrb9puhPmUJXJha7BVDPLt2",
+      "paymentCoin": "ETH",
+      "read": true,
+      "shippingAddress": "A ",
+      "shippingName": "N",
+      "slug": "t1",
+      "state": "COMPLETED",
+      "thumbnail": "QmVh3jegqw9V4DyYNiXMp77SchVZTACGZDe8PW1oQak9vY",
+      "timestamp": "2019-10-23T19:34:43Z",
+      "title": "T1",
+      "total": "3170898315200000",
+      "unreadChatMessages": 0
+    }
+  ]
+}

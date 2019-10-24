@@ -1,0 +1,14 @@
+{
+  "amount": {
+    "amount": "11279519441940000",
+    "currency": {
+      "code": "ETH",
+      "currencyType": "crypto",
+      "divisibility": 18,
+      "name": "Ethereum"
+    }
+  },
+  "orderId": "QmNgwpWbccEJw3gRWDo5CSfa83B1fZqGCttLT32p8Khukv",
+  "paymentAddress": "0x0A9e32DB49768c7b8196e77A6673EB5C813a9B8D",
+  "vendorOnline": true
+}
